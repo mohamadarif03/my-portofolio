@@ -1,0 +1,93 @@
+import React from 'react';
+import { motion } from 'framer-motion';
+import Reveal from './Reveal';
+
+const Contact = () => {
+  return (
+    <section className="w-full max-w-5xl" id="contact">
+        <Reveal>
+            <div className="flex flex-col items-center my-12 text-center">
+                <h2 className="text-primary text-sm font-bold tracking-widest uppercase mb-2">Get In Touch</h2>
+                <h1 className="text-white text-3xl md:text-5xl font-bold leading-tight glow-violet">Let's Build Something Together</h1>
+            </div>
+        </Reveal>
+
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
+            {/* Form Section */}
+            <div className="lg:col-span-3">
+                <Reveal delay={0.2} width="100%">
+                    <div className="glassmorphism rounded-2xl p-8 border border-white/5">
+                        <form className="space-y-5">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                <div className="space-y-2">
+                                    <label className="text-slate-300 text-xs font-bold uppercase tracking-wider">Name</label>
+                                    <motion.input 
+                                        whileFocus={{ scale: 1.01, borderColor: "#8B5CF6" }}
+                                        className="w-full rounded-lg bg-[#151022]/80 border border-slate-700 text-white focus:outline-none transition-colors p-3"
+                                        placeholder="John Doe" 
+                                    />
+                                </div>
+                                <div className="space-y-2">
+                                    <label className="text-slate-300 text-xs font-bold uppercase tracking-wider">Email</label>
+                                    <motion.input 
+                                        whileFocus={{ scale: 1.01, borderColor: "#8B5CF6" }}
+                                        className="w-full rounded-lg bg-[#151022]/80 border border-slate-700 text-white focus:outline-none transition-colors p-3"
+                                        placeholder="john@example.com" 
+                                    />
+                                </div>
+                            </div>
+                            <div className="space-y-2">
+                                <label className="text-slate-300 text-xs font-bold uppercase tracking-wider">Message</label>
+                                <motion.textarea 
+                                    whileFocus={{ scale: 1.01, borderColor: "#8B5CF6" }}
+                                    className="w-full rounded-lg bg-[#151022]/80 border border-slate-700 text-white focus:outline-none transition-colors p-3 min-h-[150px]"
+                                    placeholder="Tell me about your project..."
+                                ></motion.textarea>
+                            </div>
+                            <motion.button 
+                                whileHover={{ scale: 1.02 }}
+                                whileTap={{ scale: 0.98 }}
+                                className="w-full rounded-lg h-12 bg-gradient-to-r from-primary to-violet-600 text-white font-bold tracking-wide shadow-lg"
+                            >
+                                Send Message
+                            </motion.button>
+                        </form>
+                    </div>
+                </Reveal>
+            </div>
+            
+            <div className="lg:col-span-2 flex flex-col gap-6">
+                <Reveal delay={0.4} width="100%">
+                    <div className="glassmorphism rounded-2xl p-8 flex flex-col gap-6 h-full justify-center">
+                        <a href="mailto:mohamad@arif.dev" className="flex items-center gap-4 group p-3 rounded-lg hover:bg-white/5 transition-all">
+                            <div className="size-10 rounded-full bg-primary/20 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+                                <span className="material-symbols-outlined">mail</span>
+                            </div>
+                            <div>
+                                <p className="text-xs text-slate-400">Email Me</p>
+                                <p className="text-white font-medium group-hover:text-primary transition-colors">mohamad@arif.dev</p>
+                            </div>
+                        </a>
+
+                        <a href="#" className="flex items-center gap-4 group p-3 rounded-lg hover:bg-white/5 transition-all">
+                            <div className="size-10 rounded-full bg-secondary/20 flex items-center justify-center text-secondary group-hover:scale-110 transition-transform">
+                                <span className="material-symbols-outlined">code</span>
+                            </div>
+                            <div>
+                                <p className="text-xs text-slate-400">LinkedIn</p>
+                                <p className="text-white font-medium group-hover:text-secondary transition-colors">/in/mohamadarif</p>
+                            </div>
+                        </a>
+
+                        <div className="mt-4 pt-6 border-t border-white/10 text-center">
+                            <p className="text-slate-500 text-sm">Location: Malang, East Java</p>
+                        </div>
+                    </div>
+                </Reveal>
+            </div>
+        </div>
+    </section>
+  );
+};
+
+export default Contact;

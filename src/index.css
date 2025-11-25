@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .glow-violet {
+    filter: drop-shadow(0 0 5px #8b5cf6) drop-shadow(0 0 10px #8b5cf6);
+  }
+  .glow-cyan {
+    filter: drop-shadow(0 0 5px #06b6d4) drop-shadow(0 0 10px #06b6d4);
+  }
+  .glow-text {
+    text-shadow: 0 0 15px rgba(139, 92, 246, 0.5);
+  }
+
+  .glassmorphism {
+    @apply bg-[#1e1b2f]/90 backdrop-blur-[2px] border border-violet-500/15 shadow-lg;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
