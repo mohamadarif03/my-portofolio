@@ -19,7 +19,7 @@ const Hero = () => {
 
           <Reveal delay={0.2}>
             <p className="text-slate-400 text-lg md:text-xl font-normal leading-relaxed max-w-2xl">
-              I am a <strong>Web Developer</strong> passionate about <strong>Machine Learning</strong>. I build scalable backend systems (Golang) and interactive frontends (React), bridging the gap between application and intelligence.
+              I am a <strong>Web Developer</strong> passionate about <strong>Machine Learning</strong>. I build scalable backend systems (Golang, PHP, etc) and interactive frontends (React, Vue, etc), bridging the gap between application and intelligence.
             </p>
           </Reveal>
           

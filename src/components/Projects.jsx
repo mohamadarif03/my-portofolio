@@ -49,10 +49,10 @@ const Projects = () => {
                       </span>
                     ))}
                   </div>
-                  <button className="w-full flex items-center justify-center gap-2 rounded-lg h-10 bg-white/5 hover:bg-primary hover:text-white border border-white/10 text-sm font-bold transition-all group-hover:border-primary/50">
-                    View Code
-                    <span className="material-symbols-outlined text-sm">arrow_outward</span>
-                  </button>
+                  <Link to={`/project/${project.id}`} className="w-full flex items-center justify-center gap-2 rounded-lg h-10 bg-white/5 hover:bg-primary hover:text-white border border-white/10 text-sm font-bold transition-all group-hover:border-primary/50">
+                    View Details
+                    <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                  </Link>
                 </div>
               </div>
             </div>

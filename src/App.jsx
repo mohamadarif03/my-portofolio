@@ -8,6 +8,7 @@ import SplashCursor from './components/SplashCursor';
 import Home from './pages/Home';
 import AllProjects from './pages/AllProjects';
 import AllCertificates from './pages/AllCertificates';
+import ProjectDetail from './pages/ProjectDetail';
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/projects" element={<AllProjects />} />
+              <Route path="/project/:id" element={<ProjectDetail />} />
               <Route path="/certificates" element={<AllCertificates />} />
             </Routes>
 
