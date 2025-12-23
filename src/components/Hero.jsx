@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import Reveal from './Reveal';
 
 import CV from '../assets/Mohamad Arif - CV.pdf';
+import profilePhoto from '../assets/photo.jpg';
 
 const Hero = () => {
   return (
@@ -58,7 +59,7 @@ const Hero = () => {
                 <img
                   className="w-full h-full object-cover rounded-full border-2 border-primary/50 shadow-2xl transition-transform duration-500 group-hover:scale-[1.02]"
                   alt="Mohamad Arif Portrait"
-                  src="/src/assets/photo.jpg"
+                  src={profilePhoto}
                 />
               </div>
 
