@@ -224,7 +224,7 @@ export const certificatesData = [
         btnHover: "hover:bg-blue-600",
         pdf: mlPdf,
         id: "cert-ml-dicoding",
-        verificationLink: "https://www.dicoding.com/certificates/ERZR40001XYV"
+        verificationLink: "https://www.dicoding.com/certificates/53XED24MKPRN"
     },
     {
         title: "Belajar Visualisasi Data",
@@ -237,7 +237,7 @@ export const certificatesData = [
         btnHover: "hover:bg-purple-500",
         pdf: visComPdf,
         id: "cert-vis-dicoding",
-        verificationLink: "https://www.dicoding.com/"
+        verificationLink: "https://www.dicoding.com/certificates/53XEQ4E7YXRN"
     },
     {
         title: "Memulai Pemrograman Dengan Python",
@@ -250,7 +250,7 @@ export const certificatesData = [
         btnHover: "hover:bg-yellow-500",
         pdf: pythonPdf,
         id: "cert-python-dicoding",
-        verificationLink: "https://www.dicoding.com/"
+        verificationLink: "https://www.dicoding.com/certificates/0LZ044E2NP65"
     },
     {
         title: "Golang Bootcamp",
@@ -263,6 +263,6 @@ export const certificatesData = [
         btnHover: "hover:bg-cyan-500",
         pdf: golangPdf,
         id: "cert-golang-sanbercode",
-        verificationLink: "https://sanbercode.com/"
+        verificationLink: "https://sanbercode.com/certificate/in/5643131c-6d57-4a74-991e-ff3574fbd223"
     }
 ];
