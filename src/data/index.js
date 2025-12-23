@@ -28,6 +28,16 @@ import squadHubImg1 from '../assets/projects/squad-hub/image1.png';
 import squadHubImg2 from '../assets/projects/squad-hub/image2.png';
 import squadHubImg3 from '../assets/projects/squad-hub/image3.png';
 
+import kejarTaffImg from '../assets/projects/kejar-taff/image.png';
+import kejarTaffImg1 from '../assets/projects/kejar-taff/image1.png';
+import kejarTaffImg2 from '../assets/projects/kejar-taff/image2.png';
+import kejarTaffImg3 from '../assets/projects/kejar-taff/image3.png';
+
+import golang from '../assets/certified/img/golang-sanbercode.png';
+import belajarMachineLearning from '../assets/certified/img/dicoding-belajar machine learning untuk pemula.png';
+import belajarVisualisasiData from '../assets/certified/img/dicoding-belajar visualisasi data.png';
+import memulaiPemrogramanPython from '../assets/certified/img/dicoding-memulai pemrograman dengan python.png';
+
 export const projectsData = [
     {
         id: "get-skill",
@@ -91,7 +101,7 @@ export const projectsData = [
     {
         id: "dolfin-brain-lms",
         title: "Dolfin Brain",
-        tag: "Learning Management System",
+        tag: "Website",
         description: "A learning management system focused on providing CPNS exam preparation courses, handling student registration, course access, and secure online transactions within a structured learning platform.",
         features: [
             "CPNS exam preparation course management",
@@ -146,7 +156,7 @@ export const projectsData = [
     {
         id: "squad-hub",
         title: "Squad Hub",
-        tag: "Membership & Commerce Platform",
+        tag: "Website",
         description: "A versatile membership-based e-commerce platform that supports physical product sales, service offerings, and online reservation systems within a single integrated ecosystem.",
         features: [
             "Membership-based access and user management",
@@ -190,13 +200,13 @@ export const projectsData = [
             "MySQL"
         ],
         color: "from-slate-600 to-gray-800",
-        // image: dolfinBrainImg,
-        // gallery: [
-        //     dolfinBrainImg,
-        //     dolfinBrainImg1,
-        //     dolfinBrainImg2,
-        //     dolfinBrainImg3
-        // ],
+        image: kejarTaffImg,
+        gallery: [
+            kejarTaffImg,
+            kejarTaffImg1,
+            kejarTaffImg2,
+            kejarTaffImg3
+        ],
     },
 
 
@@ -206,7 +216,7 @@ export const certificatesData = [
     {
         title: "Belajar Machine Learning untuk Pemula",
         issuer: "Dicoding Indonesia",
-        image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1000&auto=format&fit=crop",
+        image: belajarMachineLearning,
         color: "bg-blue-600",
         overlay: "bg-blue-600/20",
         btnBorder: "border-blue-600/50",
@@ -219,7 +229,7 @@ export const certificatesData = [
     {
         title: "Belajar Visualisasi Data",
         issuer: "Dicoding Indonesia",
-        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop",
+        image: belajarVisualisasiData,
         color: "bg-purple-500",
         overlay: "bg-purple-500/20",
         btnBorder: "border-purple-500/50",
@@ -232,7 +242,7 @@ export const certificatesData = [
     {
         title: "Memulai Pemrograman Dengan Python",
         issuer: "Dicoding Indonesia",
-        image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=1000&auto=format&fit=crop",
+        image: memulaiPemrogramanPython,
         color: "bg-yellow-500",
         overlay: "bg-yellow-500/20",
         btnBorder: "border-yellow-500/50",
@@ -245,7 +255,7 @@ export const certificatesData = [
     {
         title: "Golang Bootcamp",
         issuer: "Sanbercode",
-        image: "https://images.unsplash.com/photo-1610433306911-37d400262145?q=80&w=1000&auto=format&fit=crop",
+        image: golang,
         color: "bg-cyan-500",
         overlay: "bg-cyan-500/20",
         btnBorder: "border-cyan-500/50",

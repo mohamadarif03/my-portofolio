@@ -1,12 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Reveal from './Reveal';
 import { certificatesData } from '../data';
 import { Link } from 'react-router-dom';
 
-const filters = ["All", "Cloud Provider", "Technology", "Issuing Body"];
-
 const Certificates = () => {
-  const [activeFilter, setActiveFilter] = useState("All");
 
   return (
     <section className="w-full pt-20" id="certificates">
@@ -22,25 +19,7 @@ const Certificates = () => {
         </div>
       </Reveal>
 
-      <Reveal delay={0.2}>
-        <div className="flex flex-wrap gap-3 mb-8 justify-center">
-          {filters.map((filter) => (
-            <button
-              key={filter}
-              onClick={() => setActiveFilter(filter)}
-              className={`flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-lg px-4 transition-all text-sm font-medium border ${activeFilter === filter
-                ? "bg-primary/20 border-primary/50 text-white glow-violet"
-                : "bg-white/5 border-white/10 text-slate-300 hover:bg-white/10 hover:text-white"
-                }`}
-            >
-              {filter}
-              {activeFilter !== filter && (
-                <span className="material-symbols-outlined text-base">expand_more</span>
-              )}
-            </button>
-          ))}
-        </div>
-      </Reveal>
+
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {certificatesData.slice(0, 3).map((cert, index) => (
@@ -63,13 +42,15 @@ const Certificates = () => {
                 <p className="text-slate-400 text-sm">{cert.issuer}</p>
 
                 <div className="mt-auto pt-4 flex flex-col sm:flex-row gap-3">
-                  <Link
-                    to={`/project/${cert.id}`}
+                  <a
+                    href={cert.pdf}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className={`flex-1 flex items-center justify-center gap-2 py-2.5 px-3 rounded-lg border ${cert.btnBorder} ${cert.btnText} ${cert.btnHover} hover:text-white transition-all text-sm font-bold bg-transparent`}
                   >
                     <span className="material-symbols-outlined text-[18px]">visibility</span>
                     View
-                  </Link>
+                  </a>
                   <a
                     href={cert.verificationLink}
                     target="_blank"
@@ -85,41 +66,6 @@ const Certificates = () => {
           </Reveal>
         ))}
       </div>
-
-      <Reveal delay={0.4}>
-        <div className="mt-8 w-full">
-          <div className="flex flex-col md:flex-row items-center gap-6 rounded-2xl glassmorphism p-6 border border-white/10 shadow-[0_0_20px_rgba(139,92,246,0.15)]">
-            <div className="w-full md:w-1/3 h-48 bg-center bg-no-repeat bg-cover rounded-xl shadow-lg relative overflow-hidden">
-              <img
-                src="https://images.unsplash.com/photo-1620825937374-87fc7d6bddc2?q=80&w=1000&auto=format&fit=crop"
-                className="w-full h-full object-cover"
-                alt="Neural Network"
-              />
-              <div className="absolute inset-0 bg-primary/30 mix-blend-overlay"></div>
-            </div>
-
-            <div className="flex flex-col justify-center gap-4 flex-1">
-              <h3 className="text-white text-2xl font-bold leading-tight glow-text">
-                Skills Validated
-              </h3>
-              <p className="text-slate-300 text-base font-normal leading-relaxed">
-                A summary of key skills validated across the collection of certifications, demonstrating deep expertise in modern cloud and data technologies.
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {["AWS & GCP", "TensorFlow", "Kubernetes", "NLP", "ML Ops"].map((skill, i) => (
-                  <span
-                    key={i}
-                    className="px-3 py-1 rounded-full bg-slate-800 text-secondary text-sm font-bold border border-secondary/30"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </Reveal>
-
       <Reveal delay={0.5}>
         <div className="w-full flex justify-center mt-12">
           <Link to="/certificates" className="group flex items-center gap-2 px-6 py-3 rounded-full border border-secondary/30 bg-secondary/10 hover:bg-secondary/20 hover:border-secondary/60 transition-all text-white font-medium text-sm">

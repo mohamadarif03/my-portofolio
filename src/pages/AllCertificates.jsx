@@ -1,12 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Reveal from '../components/Reveal';
 import { certificatesData } from '../data';
 import { Link } from 'react-router-dom';
 
-const filters = ["All", "Cloud Provider", "Technology", "Issuing Body"];
-
 const AllCertificates = () => {
-    const [activeFilter, setActiveFilter] = useState("All");
 
     return (
         <section className="w-full pt-32 px-4 mb-20">
@@ -28,25 +25,7 @@ const AllCertificates = () => {
                     </div>
                 </Reveal>
 
-                <Reveal delay={0.2}>
-                    <div className="flex flex-wrap gap-3 mb-8 justify-center md:justify-start">
-                        {filters.map((filter) => (
-                            <button
-                                key={filter}
-                                onClick={() => setActiveFilter(filter)}
-                                className={`flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-lg px-4 transition-all text-sm font-medium border ${activeFilter === filter
-                                    ? "bg-primary/20 border-primary/50 text-white glow-violet"
-                                    : "bg-white/5 border-white/10 text-slate-300 hover:bg-white/10 hover:text-white"
-                                    }`}
-                            >
-                                {filter}
-                                {activeFilter !== filter && (
-                                    <span className="material-symbols-outlined text-base">expand_more</span>
-                                )}
-                            </button>
-                        ))}
-                    </div>
-                </Reveal>
+
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     {certificatesData.map((cert, index) => (
@@ -69,13 +48,15 @@ const AllCertificates = () => {
                                     <p className="text-slate-400 text-sm">{cert.issuer}</p>
 
                                     <div className="mt-auto pt-4 flex flex-col sm:flex-row gap-3">
-                                        <Link
-                                            to={`/project/${cert.id}`}
+                                        <a
+                                            href={cert.pdf}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
                                             className={`flex-1 flex items-center justify-center gap-2 py-2.5 px-3 rounded-lg border ${cert.btnBorder} ${cert.btnText} ${cert.btnHover} hover:text-white transition-all text-sm font-bold bg-transparent`}
                                         >
                                             <span className="material-symbols-outlined text-[18px]">visibility</span>
                                             View
-                                        </Link>
+                                        </a>
                                         <a
                                             href={cert.verificationLink}
                                             target="_blank"
