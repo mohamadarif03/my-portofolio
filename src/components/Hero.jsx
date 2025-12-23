@@ -31,7 +31,7 @@ const Hero = () => {
                 whileTap={{ scale: 0.95 }}
                 className="flex items-center justify-center rounded-lg h-12 px-8 bg-primary text-white text-base font-bold glow-violet hover:bg-primary/80 transition-all"
               >
-                See My Work
+                Curriculum Vitae
               </motion.a>
               <motion.a 
                 href="https://github.com/mohamadarif03" 

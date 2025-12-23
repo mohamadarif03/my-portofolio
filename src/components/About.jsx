@@ -61,7 +61,7 @@ const About = () => {
                      <div>
                         <h3 className="text-white text-xl font-bold leading-tight group-hover:text-primary transition-colors">Web Development</h3>
                         <p className="text-slate-400 text-sm mt-2 leading-relaxed">
-                           Building responsive, scalable web applications with modern technologies like React, Node.js, and Golang.
+                           Building responsive, scalable web applications with modern technologies like React, Laravel, and Golang.
                         </p>
                      </div>
                   </div>

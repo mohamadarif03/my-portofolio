@@ -29,8 +29,8 @@ const Certificates = () => {
               key={filter}
               onClick={() => setActiveFilter(filter)}
               className={`flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-lg px-4 transition-all text-sm font-medium border ${activeFilter === filter
-                  ? "bg-primary/20 border-primary/50 text-white glow-violet"
-                  : "bg-white/5 border-white/10 text-slate-300 hover:bg-white/10 hover:text-white"
+                ? "bg-primary/20 border-primary/50 text-white glow-violet"
+                : "bg-white/5 border-white/10 text-slate-300 hover:bg-white/10 hover:text-white"
                 }`}
             >
               {filter}
@@ -62,12 +62,23 @@ const Certificates = () => {
                 </p>
                 <p className="text-slate-400 text-sm">{cert.issuer}</p>
 
-                <div className="mt-auto pt-2">
-                  <button
-                    className={`w-full text-center py-2 px-4 rounded-lg border ${cert.btnBorder} ${cert.btnText} ${cert.btnHover} hover:text-white transition-all text-sm font-bold`}
+                <div className="mt-auto pt-4 flex flex-col sm:flex-row gap-3">
+                  <Link
+                    to={`/project/${cert.id}`}
+                    className={`flex-1 flex items-center justify-center gap-2 py-2.5 px-3 rounded-lg border ${cert.btnBorder} ${cert.btnText} ${cert.btnHover} hover:text-white transition-all text-sm font-bold bg-transparent`}
                   >
-                    Verify Credential
-                  </button>
+                    <span className="material-symbols-outlined text-[18px]">visibility</span>
+                    View
+                  </Link>
+                  <a
+                    href={cert.verificationLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 flex items-center justify-center gap-2 py-2.5 px-3 rounded-lg border border-white/10 bg-white/5 hover:bg-white/10 text-slate-300 hover:text-white transition-all text-sm font-medium"
+                  >
+                    <span className="material-symbols-outlined text-[18px]">verified</span>
+                    Verify
+                  </a>
                 </div>
               </div>
             </div>

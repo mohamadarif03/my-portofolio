@@ -9,6 +9,9 @@ const AllProjects = () => {
     const [activeFilter, setActiveFilter] = useState("All");
 
     const filteredProjects = projectsData.filter(project => {
+        // Exclude certificates from All Projects view
+        if (project.tag === "Certificate") return false;
+
         if (activeFilter === "All") return true;
         if (activeFilter === "Web Developer") {
             return ["Backend", "Frontend", "Full-Stack"].includes(project.tag);
@@ -71,9 +74,16 @@ const AllProjects = () => {
 
                                 <div className="flex flex-col gap-3 flex-1">
                                     <div className="flex justify-between items-center mb-2">
-                                        <h3 className="text-xl font-bold text-white group-hover:text-primary transition-colors">
-                                            {project.title}
-                                        </h3>
+                                        <div className="flex flex-col">
+                                            <h3 className="text-xl font-bold text-white group-hover:text-primary transition-colors">
+                                                {project.title}
+                                            </h3>
+                                            {project.issuer && (
+                                                <p className="text-xs text-slate-400 font-medium uppercase tracking-wider mb-1">
+                                                    {project.issuer}
+                                                </p>
+                                            )}
+                                        </div>
                                         <span className="rounded-full bg-white/10 px-2 py-0.5 text-[10px] font-bold text-white border border-white/20 uppercase tracking-wider">
                                             {project.tag}
                                         </span>
