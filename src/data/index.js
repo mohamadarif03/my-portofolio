@@ -2,6 +2,7 @@ import mlPdf from '../assets/certified/dicoding-belajar machine learning untuk p
 import visComPdf from '../assets/certified/dicoding-belajar visualisasi data.pdf';
 import pythonPdf from '../assets/certified/dicoding-memulai pemrograman dengan python.pdf';
 import golangPdf from '../assets/certified/golang-bootcamp-sanbercode.pdf';
+import mlibmPdf from '../assets/certified/machine-learning-IBM.pdf';
 
 import getSkillImg from '../assets/projects/get-skill/image.png';
 import getSkillImg1 from '../assets/projects/get-skill/image1.png';
@@ -213,6 +214,19 @@ export const projectsData = [
 ];
 
 export const certificatesData = [
+    {
+        title: "Machine Learning with Python",
+        issuer: "IBM",
+        image: mlibmPdf,
+        color: "bg-blue-600",
+        overlay: "bg-blue-600/20",
+        btnBorder: "border-blue-600/50",
+        btnText: "text-white",
+        btnHover: "hover:bg-blue-600",
+        pdf: mlPdf,
+        id: "cert-ml-ibm",
+        verificationLink: "https://www.coursera.org/account/accomplishments/verify/J0RT6KHDO7LE"
+    },
     {
         title: "Belajar Machine Learning untuk Pemula",
         issuer: "Dicoding Indonesia",
