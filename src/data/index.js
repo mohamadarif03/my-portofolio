@@ -3,139 +3,203 @@ import visComPdf from '../assets/certified/dicoding-belajar visualisasi data.pdf
 import pythonPdf from '../assets/certified/dicoding-memulai pemrograman dengan python.pdf';
 import golangPdf from '../assets/certified/golang-bootcamp-sanbercode.pdf';
 
+import getSkillImg from '../assets/projects/get-skill/image.png';
+import getSkillImg1 from '../assets/projects/get-skill/image1.png';
+import getSkillImg2 from '../assets/projects/get-skill/image2.png';
+import getSkillImg3 from '../assets/projects/get-skill/image3.png';
+
+import cobyLearnImg from '../assets/projects/coby-learn-ai/image.png';
+import cobyLearnImg1 from '../assets/projects/coby-learn-ai/image1.png';
+import cobyLearnImg2 from '../assets/projects/coby-learn-ai/image2.png';
+import cobyLearnImg3 from '../assets/projects/coby-learn-ai/image3.png';
+
+import sipjakiImg from '../assets/projects/sipjaki/image.png';
+import sipjakiImg1 from '../assets/projects/sipjaki/image2.png';
+import sipjakiImg2 from '../assets/projects/sipjaki/image3.png';
+import sipjakiImg3 from '../assets/projects/sipjaki/image4.png';
+
+import dolfinBrainImg from '../assets/projects/dolfin-brain/image.png';
+import dolfinBrainImg1 from '../assets/projects/dolfin-brain/image1.png';
+import dolfinBrainImg2 from '../assets/projects/dolfin-brain/image2.png';
+import dolfinBrainImg3 from '../assets/projects/dolfin-brain/image3.png';
+
+import squadHubImg from '../assets/projects/squad-hub/image.png';
+import squadHubImg1 from '../assets/projects/squad-hub/image1.png';
+import squadHubImg2 from '../assets/projects/squad-hub/image2.png';
+import squadHubImg3 from '../assets/projects/squad-hub/image3.png';
+
 export const projectsData = [
     {
-        id: "ai-quiz-generator",
-        title: "AI Quiz Generator",
-        tag: "Backend",
-        description: "A backend service built with Golang that utilizes Gemini AI to analyze PDFs and YouTube transcripts, automatically generating educational quizzes and summaries.",
+        id: "get-skill",
+        title: "Get Skill",
+        tag: "Website",
+        description: "An online learning platform that sells digital learning materials and courses directly to users, featuring secure payments, role-based access, and a structured learning dashboard.",
         features: [
-            "PDF and YouTube transcript analysis",
-            "Automatic quiz generation with answer keys",
-            "Summary extraction from long-form content",
-            "RESTful API architecture",
-            "Integration with Gemini 1.5 Pro model"
+            "Direct sales of digital learning materials and courses",
+            "User authentication and access control",
+            "Secure payment integration with automatic content access",
+            "Course and material management system",
+            "User dashboard for purchased courses and materials",
+            "Admin panel for managing content and transactions"
         ],
-        projectLink: "https://github.com/mohamadarif03/ai-quiz-generator",
-        tech: ["Golang", "Gemini AI", "Rest API"],
+        projectLink: "https://getskill.id",
+        tech: [
+            "Laravel",
+            "JavaScript",
+            "Tripay Payment Gateway",
+            "REST API"
+        ],
         color: "from-primary to-violet-600",
-        image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1000&auto=format&fit=crop",
+        image: getSkillImg,
         gallery: [
-            "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1000&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?q=80&w=1000&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop"
+            getSkillImg,
+            getSkillImg1,
+            getSkillImg2,
+            getSkillImg3
         ],
-        issuer: "Self-Project"
     },
     {
-        id: "real-time-dashboard",
-        title: "Real-time Dashboard",
-        tag: "Full-Stack",
-        description: "A comprehensive analytic dashboard visualizing streaming data via WebSockets. Features interactive charts, dark mode, and real-time alerts for business intelligence.",
+        id: "cobylearn-ai",
+        title: "CobyLearnAI",
+        tag: "Website",
+        description: "An AI-powered learning assistant that helps users summarize learning materials from PDFs, YouTube videos, and text, while encouraging consistent study habits through gamification and learning analytics.",
         features: [
-            "Real-time data streaming with Socket.io",
-            "Interactive charts using Recharts",
-            "Dynamic dark/light mode switching",
-            "Live alert system for critical metrics",
-            "Responsive grid layout"
+            "AI-based summarization from PDF, YouTube, and text input",
+            "Integration with Gemini AI model for content understanding",
+            "Personal to-do list for study planning",
+            "Daily learning streak and gamification system",
+            "Learning analytics and statistics (study time, activity frequency)",
+            "User authentication and personalized dashboard",
+            "RESTful API backend architecture"
         ],
-        projectLink: "https://dashboard-demo.com",
-        tech: ["React", "Node.js", "Socket.io"],
-        color: "from-secondary to-cyan-600",
-        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop",
-        issuer: "Freelance Client"
+        projectLink: "https://coby-learn-ai.vercel.app",
+        tech: [
+            "Golang",
+            "React",
+            "Gemini AI",
+            "REST API"
+        ],
+        color: "from-emerald-500 to-cyan-600",
+        image: cobyLearnImg,
+        gallery: [
+            cobyLearnImg,
+            cobyLearnImg1,
+            cobyLearnImg2,
+            cobyLearnImg3
+        ],
     },
     {
-        id: "classification-model",
-        title: "Classification Model",
-        tag: "Data Science",
-        description: "Exploration of Decision Tree algorithms for predictive modeling. Includes Python notebooks for data preprocessing, training, and visualizing tree structures.",
+        id: "dolfin-brain-lms",
+        title: "Dolfin Brain",
+        tag: "Learning Management System",
+        description: "A learning management system focused on providing CPNS exam preparation courses, handling student registration, course access, and secure online transactions within a structured learning platform.",
         features: [
-            "Data preprocessing and cleaning pipelines",
-            "Decision Tree and Random Forest implementation",
-            "Model performance visualization (Confusion Matrix, ROC)",
-            "Hyperparameter tuning analysis",
-            "Jupyter notebook walkthroughs"
+            "CPNS exam preparation course management",
+            "Student registration and authentication system",
+            "Paid course purchase and access control",
+            "Secure payment integration using Tripay",
+            "Learning dashboard for enrolled students",
+            "Admin panel for managing courses, users, and transactions"
         ],
-        projectLink: "https://colab.research.google.com/",
-        tech: ["Python", "Scikit-Learn", "Pandas"],
-        color: "from-green-500 to-emerald-600",
-        image: "https://images.unsplash.com/photo-1527474305487-b87b222841cc?q=80&w=1000&auto=format&fit=crop",
-        issuer: "University Assignment"
-    },
-    // Real Certificates keying off existing files
-    {
-        id: "cert-ml-dicoding",
-        title: "Belajar Machine Learning untuk Pemula",
-        tag: "Certificate",
-        description: "Comprehensive course on machine learning fundamentals using Python. Covered supervised/unsupervised learning, model evaluation, and TensorFlow basics.",
-        features: [
-            "Supervised Learning Algorithms",
-            "Unsupervised Learning Techniques",
-            "Model Evaluation Metrics",
-            "TensorFlow Implementation"
+        projectLink: "http://app.dolfinbrain.com/login",
+        tech: [
+            "Laravel (Full-stack)",
+            "MySQL",
+            "Tripay Payment Gateway"
         ],
-        projectLink: "https://www.dicoding.com/certificates/ERZR40001XYV",
-        tech: ["Python", "TensorFlow", "Scikit-Learn"],
-        color: "from-blue-600 to-indigo-600",
-        image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1000&auto=format&fit=crop",
-        pdf: mlPdf,
-        issuer: "Dicoding Indonesia"
+        color: "from-sky-600 to-blue-700",
+        image: dolfinBrainImg,
+        gallery: [
+            dolfinBrainImg,
+            dolfinBrainImg1,
+            dolfinBrainImg2,
+            dolfinBrainImg3
+        ],
     },
     {
-        id: "cert-vis-dicoding",
-        title: "Belajar Visualisasi Data",
-        tag: "Certificate",
-        description: "In-depth course on data visualization principles and tools. Learned effective ways to communicate insights through varying chart types.",
+        id: "sipjaki-pasuruan",
+        title: "SIPJAKI Kabupaten Pasuruan",
+        tag: "Website",
+        description: "A government web-based information system designed to improve transparency and accessibility of construction service data in Pasuruan Regency, while strengthening business networking within the regional construction supply chain.",
         features: [
-            "Data Visualization Principles",
-            "Effective Chart Selection",
-            "Storytelling with Data",
-            "Tool Proficiency"
+            "Centralized database of construction service businesses",
+            "Public access to verified construction-related information",
+            "Business directory to support construction supply chain networking",
+            "Admin panel for data management and verification",
+            "Role-based access control for administrators and operators",
+            "Data reporting and monitoring system"
         ],
-        projectLink: "https://www.dicoding.com/",
-        tech: ["Data Viz", "Communication"],
-        color: "from-purple-500 to-pink-500",
-        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop",
-        pdf: visComPdf,
-        issuer: "Dicoding Indonesia"
+        projectLink: "https://sipjaki.pasuruankab.com/",
+        tech: [
+            "Laravel (Full-stack)",
+            "MySQL"
+        ],
+        color: "from-blue-600 to-indigo-700",
+        image: sipjakiImg,
+        gallery: [
+            sipjakiImg,
+            sipjakiImg1,
+            sipjakiImg2,
+            sipjakiImg3
+        ],
     },
     {
-        id: "cert-python-dicoding",
-        title: "Memulai Pemrograman Dengan Python",
-        tag: "Certificate",
-        description: "Foundational Python programming course covering syntax, data structures, control flow, and basic algorithms.",
+        id: "squad-hub",
+        title: "Squad Hub",
+        tag: "Membership & Commerce Platform",
+        description: "A versatile membership-based e-commerce platform that supports physical product sales, service offerings, and online reservation systems within a single integrated ecosystem.",
         features: [
-            "Python Syntax & Semantics",
-            "Data Structures",
-            "Control Flow",
-            "Basic Algorithms"
+            "Membership-based access and user management",
+            "E-commerce system for physical product sales",
+            "Service listing and service purchase workflow",
+            "Online reservation and booking system",
+            "Secure payment integration using Xendit",
+            "Admin panel for managing products, services, reservations, and members"
         ],
-        projectLink: "https://www.dicoding.com/",
-        tech: ["Python", "Programming"],
-        color: "from-yellow-500 to-orange-500",
-        image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=1000&auto=format&fit=crop",
-        pdf: pythonPdf,
-        issuer: "Dicoding Indonesia"
+        projectLink: "https://squadhub.id/",
+        tech: [
+            "Laravel",
+            "MySQL",
+            "Xendit Payment Gateway"
+        ],
+        color: "from-fuchsia-600 to-purple-700",
+        image: squadHubImg,
+        gallery: [
+            squadHubImg,
+            squadHubImg1,
+            squadHubImg2,
+            squadHubImg3
+        ],
     },
     {
-        id: "cert-golang-sanbercode",
-        title: "Golang Bootcamp",
-        tag: "Certificate",
-        description: "Intensive bootcamp focused on Go language development, covering backend concepts, REST APIs, and concurrency.",
+        id: "kejar-taff",
+        title: "Kejar Taff",
+        tag: "Website",
+        description: "A task management system designed for field officers to efficiently track and monitor on-site car leasing activities, providing real-time visibility and structured workflow management.",
         features: [
-            "Go Language Fundamentals",
-            "RESTful API Development",
-            "Concurrency Patterns",
-            "Backend Architecture"
+            "Task assignment and management for field officers",
+            "Activity tracking and field reporting system",
+            "Monitoring dashboard for supervisors and administrators",
+            "Role-based access control (Admin, Supervisor, Field Officer)",
+            "Centralized task and activity database",
+            "Data reporting and operational monitoring"
         ],
-        projectLink: "https://sanbercode.com/",
-        tech: ["Go", "Backend", "API"],
-        color: "from-cyan-500 to-blue-500",
-        image: "https://images.unsplash.com/photo-1610433306911-37d400262145?q=80&w=1000&auto=format&fit=crop",
-        pdf: golangPdf,
-        issuer: "Sanbercode"
-    }
+        projectLink: "https://kejartaf.com",
+        tech: [
+            "Laravel (Full-stack)",
+            "MySQL"
+        ],
+        color: "from-slate-600 to-gray-800",
+        // image: dolfinBrainImg,
+        // gallery: [
+        //     dolfinBrainImg,
+        //     dolfinBrainImg1,
+        //     dolfinBrainImg2,
+        //     dolfinBrainImg3
+        // ],
+    },
+
+
 ];
 
 export const certificatesData = [

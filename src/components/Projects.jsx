@@ -32,11 +32,6 @@ const Projects = () => {
                   <h3 className="text-xl font-bold text-white group-hover:text-primary transition-colors">
                     {project.title}
                   </h3>
-                  {project.issuer && (
-                    <p className="text-xs text-slate-400 font-medium uppercase tracking-wider mb-1">
-                      {project.issuer}
-                    </p>
-                  )}
                   <span className="rounded-full bg-white/10 px-2 py-0.5 text-[10px] font-bold text-white border border-white/20 uppercase tracking-wider">
                     {project.tag}
                   </span>

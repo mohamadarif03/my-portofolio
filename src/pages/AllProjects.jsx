@@ -14,7 +14,7 @@ const AllProjects = () => {
 
         if (activeFilter === "All") return true;
         if (activeFilter === "Web Developer") {
-            return ["Backend", "Frontend", "Full-Stack"].includes(project.tag);
+            return ["Backend", "Frontend", "Full-Stack", "Website"].includes(project.tag);
         }
         if (activeFilter === "Machine Learning") {
             return ["Data Science", "Machine Learning", "AI"].includes(project.tag);
@@ -58,59 +58,69 @@ const AllProjects = () => {
                     </div>
                 </Reveal>
 
-                <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-                    {filteredProjects.map((project, index) => (
-                        <Reveal key={index} delay={index * 0.1}>
-                            <div className="project-card group flex flex-col gap-4 rounded-2xl p-5 glassmorphism relative overflow-hidden h-full hover:border-primary/30 transition-all duration-300">
-
-                                <div className="w-full aspect-video rounded-xl overflow-hidden relative">
-                                    <div className={`absolute inset-0 bg-gradient-to-tr ${project.color} opacity-20 mix-blend-overlay z-10`}></div>
-                                    <img
-                                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                                        alt={project.title}
-                                        src={project.image}
-                                    />
-                                </div>
-
-                                <div className="flex flex-col gap-3 flex-1">
-                                    <div className="flex justify-between items-center mb-2">
-                                        <div className="flex flex-col">
-                                            <h3 className="text-xl font-bold text-white group-hover:text-primary transition-colors">
-                                                {project.title}
-                                            </h3>
-                                            {project.issuer && (
-                                                <p className="text-xs text-slate-400 font-medium uppercase tracking-wider mb-1">
-                                                    {project.issuer}
-                                                </p>
-                                            )}
-                                        </div>
-                                        <span className="rounded-full bg-white/10 px-2 py-0.5 text-[10px] font-bold text-white border border-white/20 uppercase tracking-wider">
-                                            {project.tag}
-                                        </span>
-                                    </div>
-
-                                    <p className="text-slate-400 text-sm leading-relaxed line-clamp-3">
-                                        {project.description}
-                                    </p>
-
-                                    <div className="mt-auto pt-4 space-y-4">
-                                        <div className="flex flex-wrap gap-2">
-                                            {project.tech.map((t, i) => (
-                                                <span key={i} className="px-2 py-1 rounded text-xs font-medium bg-slate-800 text-slate-300 border border-slate-700">
-                                                    {t}
-                                                </span>
-                                            ))}
-                                        </div>
-                                        <Link to={`/project/${project.id}`} className="w-full flex items-center justify-center gap-2 rounded-lg h-10 bg-white/5 hover:bg-primary hover:text-white border border-white/10 text-sm font-bold transition-all group-hover:border-primary/50">
-                                            View Details
-                                            <span className="material-symbols-outlined text-sm">arrow_forward</span>
-                                        </Link>
-                                    </div>
-                                </div>
+                {filteredProjects.length === 0 ? (
+                    <Reveal>
+                        <div className="flex flex-col items-center justify-center py-20 text-center col-span-full">
+                            <div className="w-24 h-24 mb-6 rounded-full bg-white/5 flex items-center justify-center border border-white/10">
+                                <span className="material-symbols-outlined text-4xl text-slate-400">engineering</span>
                             </div>
-                        </Reveal>
-                    ))}
-                </div>
+                            <h3 className="text-2xl font-bold text-white mb-3">Work in Progress</h3>
+                            <p className="text-slate-400 max-w-md mx-auto leading-relaxed">
+                                Great things happen to those who wait! <br />
+                                I'm currently crafting key projects for this category.
+                            </p>
+                        </div>
+                    </Reveal>
+                ) : (
+                    <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                        {filteredProjects.map((project, index) => (
+                            <Reveal key={index} delay={index * 0.1}>
+                                <div className="project-card group flex flex-col gap-4 rounded-2xl p-5 glassmorphism relative overflow-hidden h-full hover:border-primary/30 transition-all duration-300">
+
+                                    <div className="w-full aspect-video rounded-xl overflow-hidden relative">
+                                        <div className={`absolute inset-0 bg-gradient-to-tr ${project.color} opacity-20 mix-blend-overlay z-10`}></div>
+                                        <img
+                                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                            alt={project.title}
+                                            src={project.image}
+                                        />
+                                    </div>
+
+                                    <div className="flex flex-col gap-3 flex-1">
+                                        <div className="flex justify-between items-center mb-2">
+                                            <div className="flex flex-col">
+                                                <h3 className="text-xl font-bold text-white group-hover:text-primary transition-colors">
+                                                    {project.title}
+                                                </h3>
+                                            </div>
+                                            <span className="rounded-full bg-white/10 px-2 py-0.5 text-[10px] font-bold text-white border border-white/20 uppercase tracking-wider">
+                                                {project.tag}
+                                            </span>
+                                        </div>
+
+                                        <p className="text-slate-400 text-sm leading-relaxed line-clamp-3">
+                                            {project.description}
+                                        </p>
+
+                                        <div className="mt-auto pt-4 space-y-4">
+                                            <div className="flex flex-wrap gap-2">
+                                                {project.tech.map((t, i) => (
+                                                    <span key={i} className="px-2 py-1 rounded text-xs font-medium bg-slate-800 text-slate-300 border border-slate-700">
+                                                        {t}
+                                                    </span>
+                                                ))}
+                                            </div>
+                                            <Link to={`/project/${project.id}`} className="w-full flex items-center justify-center gap-2 rounded-lg h-10 bg-white/5 hover:bg-primary hover:text-white border border-white/10 text-sm font-bold transition-all group-hover:border-primary/50">
+                                                View Details
+                                                <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                                            </Link>
+                                        </div>
+                                    </div>
+                                </div>
+                            </Reveal>
+                        ))}
+                    </div>
+                )}
             </div>
         </section>
     );

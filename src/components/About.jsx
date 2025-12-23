@@ -30,7 +30,7 @@ const timelineData = [
    {
       year: "2025 - Present",
       title: "Information Systems – Brawijaya University",
-      description: "Currently pursuing a Bachelor's degree in Information Systems at Universitas Brawijaya with a current GPA of 4.00. Actively learning Data Science and Machine Learning, focusing on applying data-driven approaches to web-based systems.",
+      description: "Currently pursuing a Bachelor's degree in Information Systems at Universitas Brawijaya with a current GPA of 3.86. Actively learning Data Science and Machine Learning, focusing on applying data-driven approaches to web-based systems.",
       color: "bg-secondary",
       shadow: "shadow-[0_0_10px_#06B6D4]",
       borderHover: "hover:border-secondary/30"

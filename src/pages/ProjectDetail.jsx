@@ -75,8 +75,8 @@ const ProjectDetail = () => {
                                             setShowPdf(false);
                                         }}
                                         className={`relative w-20 h-14 rounded-lg overflow-hidden border-2 transition-all flex-shrink-0 ${activeImage === img && !showPdf
-                                                ? "border-primary shadow-lg shadow-primary/25 scale-105"
-                                                : "border-white/10 opacity-60 hover:opacity-100 hover:border-white/30"
+                                            ? "border-primary shadow-lg shadow-primary/25 scale-105"
+                                            : "border-white/10 opacity-60 hover:opacity-100 hover:border-white/30"
                                             }`}
                                     >
                                         <img src={img} alt={`Thumbnail ${idx}`} className="w-full h-full object-cover" />
@@ -89,8 +89,8 @@ const ProjectDetail = () => {
                                 <button
                                     onClick={() => setShowPdf(!showPdf)}
                                     className={`flex items-center gap-2 px-4 py-2 rounded-lg font-bold transition-all ${showPdf
-                                            ? "bg-red-500/10 text-red-400 border border-red-500/50"
-                                            : "bg-white/5 text-slate-300 border border-white/10 hover:bg-white/10 hover:text-white"
+                                        ? "bg-red-500/10 text-red-400 border border-red-500/50"
+                                        : "bg-white/5 text-slate-300 border border-white/10 hover:bg-white/10 hover:text-white"
                                         }`}
                                 >
                                     <span className="material-symbols-outlined">
