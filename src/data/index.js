@@ -2,7 +2,7 @@ import mlPdf from '../assets/certified/dicoding-belajar machine learning untuk p
 import visComPdf from '../assets/certified/dicoding-belajar visualisasi data.pdf';
 import pythonPdf from '../assets/certified/dicoding-memulai pemrograman dengan python.pdf';
 import golangPdf from '../assets/certified/golang-bootcamp-sanbercode.pdf';
-import mlibmPdf from '../assets/certified/machine-learning-IBM.pdf';
+import mlIBM from '../assets/certified/machine-learning-IBM.pdf';
 
 import getSkillImg from '../assets/projects/get-skill/image.png';
 import getSkillImg1 from '../assets/projects/get-skill/image1.png';
@@ -38,6 +38,7 @@ import golang from '../assets/certified/img/golang-sanbercode.png';
 import belajarMachineLearning from '../assets/certified/img/dicoding-belajar machine learning untuk pemula.png';
 import belajarVisualisasiData from '../assets/certified/img/dicoding-belajar visualisasi data.png';
 import memulaiPemrogramanPython from '../assets/certified/img/dicoding-memulai pemrograman dengan python.png';
+import mlIBM from '../assets/certified/img/machine-learning-IBM.png';
 
 export const projectsData = [
     {
@@ -217,13 +218,13 @@ export const certificatesData = [
     {
         title: "Machine Learning with Python",
         issuer: "IBM",
-        image: mlibmPdf,
+        image: mlIBM,
         color: "bg-blue-600",
         overlay: "bg-blue-600/20",
         btnBorder: "border-blue-600/50",
         btnText: "text-white",
         btnHover: "hover:bg-blue-600",
-        pdf: mlPdf,
+        pdf: mlibmPdf,
         id: "cert-ml-ibm",
         verificationLink: "https://www.coursera.org/account/accomplishments/verify/J0RT6KHDO7LE"
     },
