@@ -8,13 +8,13 @@ const Reveal = ({ children, delay = 0, width = "100%" }) => {
     const observer = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting) {
         setIsVisible(true);
-        observer.unobserve(entry.target); 
+        observer.unobserve(entry.target);
       }
     }, {
-      
-      threshold: 0.1, 
-      
-      rootMargin: "0px 0px -50px 0px" 
+
+      threshold: 0.1,
+
+      rootMargin: "0px 0px -50px 0px"
     });
 
     if (ref.current) {
@@ -32,9 +32,9 @@ const Reveal = ({ children, delay = 0, width = "100%" }) => {
       style={{ width, transitionDelay: `${delay}s` }}
       className={`
         transform transition-all duration-700 ease-out
-        ${isVisible 
-          ? 'opacity-100 translate-y-0' 
-          : 'opacity-0 translate-y-10'
+        ${isVisible
+          ? 'opacity-100 translate-y-0'
+          : 'opacity-100 translate-y-0 md:opacity-0 md:translate-y-10'
         }
       `}
     >
