@@ -242,7 +242,7 @@ const GithubInsights = () => {
           </Reveal>
         </div>
 
-        {/* GitHub Streak Stats Image */}
+        {/* GitHub Streak Stats Image
         <Reveal delay={0.4}>
             <div className="flex justify-center w-full">
                 <img 
@@ -251,7 +251,7 @@ const GithubInsights = () => {
                     className="w-full max-w-2xl hover:scale-[1.02] transition-transform duration-300 drop-shadow-2xl"
                 />
             </div>
-        </Reveal>
+        </Reveal> */}
 
         <Reveal delay={0.5}>
           <div className="glassmorphism p-6 md:p-8 rounded-2xl border border-white/5 overflow-hidden">
