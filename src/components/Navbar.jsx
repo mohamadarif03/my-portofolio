@@ -9,6 +9,7 @@ const Navbar = () => {
     { name: 'Home', href: '/#home' },
     { name: 'About', href: '/#about' },
     { name: 'Projects', href: '/#projects' },
+    { name: 'Gallery', href: '/#gallery' },
     { name: 'Certifications', href: '/#certificates' },
   ];
 
@@ -20,7 +21,7 @@ const Navbar = () => {
         setIsScrolled(false);
       }
 
-      const sections = ['home', 'about', 'projects', 'certificates', 'contact'];
+      const sections = ['home', 'about', 'projects', 'gallery', 'certificates', 'contact'];
       
       for (const sectionId of sections) {
         const element = document.getElementById(sectionId);

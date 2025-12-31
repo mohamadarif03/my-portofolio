@@ -281,3 +281,42 @@ export const certificatesData = [
         verificationLink: "https://sanbercode.com/certificate/in/5643131c-6d57-4a74-991e-ff3574fbd223"
     }
 ];
+
+export const galleryData = [
+    {
+        id: 1,
+        title: "Team Collaboration",
+        image: squadHubImg,
+        detail: "Our team working together on the Squad Hub project, brainstorming ideas and implementing features."
+    },
+    {
+        id: 2,
+        title: "System Architecture",
+        image: dolfinBrainImg1,
+        detail: "Designing the scalable architecture for Dolfin Brain LMS to handle thousands of concurrent users."
+    },
+    {
+        id: 3,
+        title: "Mobile Responsive Design",
+        image: getSkillImg1,
+        detail: "Ensuring Get Skill looks perfect on all devices, from large desktop screens to mobile phones."
+    },
+    {
+        id: 4,
+        title: "Data Visualization",
+        image: sipjakiImg2,
+        detail: "Creating intuitive dashboards for SIPJAKI to visualize construction service data effectively."
+    },
+    {
+        id: 5,
+        title: "AI Integration",
+        image: cobyLearnImg1,
+        detail: "Integrating Gemini AI into CobyLearn to provide smart summaries and learning assistance."
+    },
+    {
+        id: 6,
+        title: "Field Operations",
+        image: kejarTaffImg2,
+        detail: "Field officers using the Kejar Taff application to manage daily tasks and reporting."
+    }
+];
