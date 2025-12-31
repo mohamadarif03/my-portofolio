@@ -40,6 +40,11 @@ import belajarVisualisasiData from '../assets/certified/img/dicoding-belajar vis
 import memulaiPemrogramanPython from '../assets/certified/img/dicoding-memulai pemrograman dengan python.png';
 import mlIbmImg from '../assets/certified/img/machine-learning-ibm.png';
 
+import gallery1 from '../assets/galery/galery1.jpg';
+import gallery2 from '../assets/galery/galery2.jpeg';
+import gallery3 from '../assets/galery/galery3.jpeg';
+import gallery4 from '../assets/galery/galery4.jpeg';
+
 export const projectsData = [
     {
         id: "get-skill",
@@ -285,38 +290,26 @@ export const certificatesData = [
 export const galleryData = [
     {
         id: 1,
-        title: "Team Collaboration",
-        image: squadHubImg,
-        detail: "Our team working together on the Squad Hub project, brainstorming ideas and implementing features."
+        title: "Laravel Training Mentor",
+        image: gallery1,
+        detail: "Farewell photo after a week of intensive offline Laravel training at SMKN 2 Kraksaan."
     },
     {
         id: 2,
-        title: "System Architecture",
-        image: dolfinBrainImg1,
-        detail: "Designing the scalable architecture for Dolfin Brain LMS to handle thousands of concurrent users."
+        title: "JavaScript Online Class",
+        image: gallery2,
+        detail: "Closing session of the online JavaScript course with enthusiastic students from SMKN 4 Bojonegoro."
     },
     {
         id: 3,
-        title: "Mobile Responsive Design",
-        image: getSkillImg1,
-        detail: "Ensuring Get Skill looks perfect on all devices, from large desktop screens to mobile phones."
+        title: "Internship Farewell",
+        image: gallery3,
+        detail: "A memorable farewell with the internship team at PT Humma Teknologi Indonesia, 2024."
     },
     {
         id: 4,
-        title: "Data Visualization",
-        image: sipjakiImg2,
-        detail: "Creating intuitive dashboards for SIPJAKI to visualize construction service data effectively."
-    },
-    {
-        id: 5,
-        title: "AI Integration",
-        image: cobyLearnImg1,
-        detail: "Integrating Gemini AI into CobyLearn to provide smart summaries and learning assistance."
-    },
-    {
-        id: 6,
-        title: "Field Operations",
-        image: kejarTaffImg2,
-        detail: "Field officers using the Kejar Taff application to manage daily tasks and reporting."
+        title: "External Examiner & Awards",
+        image: gallery4,
+        detail: "Awarding the top 3 performing students while serving as a competency exam assessor at SMKN 6 Jember."
     }
 ];
