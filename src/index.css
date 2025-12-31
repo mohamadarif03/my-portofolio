@@ -15,9 +15,12 @@
   .glow-text {
     text-shadow: 0 0 15px rgba(139, 92, 246, 0.5);
   }
+  .glow-text-safe {
+    filter: drop-shadow(0 0 15px rgba(139, 92, 246, 0.5));
+  }
 
   .glassmorphism {
-    @apply bg-[#1e1b2f]/90 backdrop-blur-[2px] border border-violet-500/15 shadow-lg;
+    @apply bg-white/90 dark:bg-[#1e1b2f]/90 backdrop-blur-[2px] border border-slate-200 dark:border-violet-500/15 shadow-lg;
   }
 }
 

@@ -47,7 +47,7 @@ const About = () => {
             <Reveal>
                <div className="flex flex-col items-center mb-8 text-center">
                   <h2 className="text-secondary text-sm font-bold tracking-widest uppercase mb-2">About Me</h2>
-                  <h3 className="text-white text-3xl md:text-4xl font-bold glow-text">My Dual Expertise</h3>
+                  <h3 className="text-slate-900 dark:text-white text-3xl md:text-4xl font-bold glow-text">My Dual Expertise</h3>
                </div>
             </Reveal>
 
@@ -59,8 +59,8 @@ const About = () => {
                         <span className="material-symbols-outlined text-3xl">code</span>
                      </div>
                      <div>
-                        <h3 className="text-white text-xl font-bold leading-tight group-hover:text-primary transition-colors">Web Development</h3>
-                        <p className="text-slate-400 text-sm mt-2 leading-relaxed">
+                        <h3 className="text-slate-900 dark:text-white text-xl font-bold leading-tight group-hover:text-primary transition-colors">Web Development</h3>
+                        <p className="text-slate-600 dark:text-slate-400 text-sm mt-2 leading-relaxed">
                            Building responsive, scalable web applications with modern technologies like React, Laravel, and Golang.
                         </p>
                      </div>
@@ -74,8 +74,8 @@ const About = () => {
                         <span className="material-symbols-outlined text-3xl">model_training</span>
                      </div>
                      <div>
-                        <h3 className="text-white text-xl font-bold leading-tight group-hover:text-secondary transition-colors">Data Science & ML</h3>
-                        <p className="text-slate-400 text-sm mt-2 leading-relaxed">
+                        <h3 className="text-slate-900 dark:text-white text-xl font-bold leading-tight group-hover:text-secondary transition-colors">Data Science & ML</h3>
+                        <p className="text-slate-600 dark:text-slate-400 text-sm mt-2 leading-relaxed">
                            Transforming data into insights and building predictive models using Pandas, Scikit-learn, and TensorFlow.
                         </p>
                      </div>
@@ -88,7 +88,7 @@ const About = () => {
          <div className="w-full pt-10">
             <Reveal>
                <div className="flex flex-col items-center mb-12 text-center">
-                  <h3 className="text-white text-2xl md:text-3xl font-bold">My Journey</h3>
+                  <h3 className="text-slate-900 dark:text-white text-2xl md:text-3xl font-bold glow-text">My Journey</h3>
                </div>
             </Reveal>
 
@@ -105,16 +105,16 @@ const About = () => {
                         <div className="hidden md:block md:w-5/12"></div>
 
                         {/* Titik Bulat di Tengah */}
-                        <div className={`z-10 flex h-6 w-6 shrink-0 items-center justify-center rounded-full ring-8 ring-background-dark ${item.color} ${item.shadow}`}></div>
+                        <div className={`z-10 flex h-6 w-6 shrink-0 items-center justify-center rounded-full ring-8 ring-slate-50 dark:ring-background-dark ${item.color} ${item.shadow}`}></div>
 
                         {/* Kotak Konten */}
                         <div className={`w-[calc(100%-4rem)] md:w-5/12 pl-4 md:pl-0 ${index % 2 === 0 ? 'md:pr-8 md:text-right' : 'md:pl-8 md:text-left'}`}>
-                           <div className={`rounded-xl border border-white/10 glassmorphism p-5 shadow-lg transition-all ${item.borderHover} hover:-translate-y-1`}>
+                           <div className={`rounded-xl border border-slate-200 dark:border-white/10 glassmorphism p-5 shadow-lg transition-all ${item.borderHover} hover:-translate-y-1`}>
                               <p className={`mb-1 text-xs font-bold uppercase tracking-wider ${item.color === 'bg-primary' ? 'text-primary' : 'text-secondary'}`}>
                                  {item.year}
                               </p>
-                              <h3 className="font-bold text-white text-lg">{item.title}</h3>
-                              <p className="mt-2 text-sm text-slate-400 leading-relaxed">
+                              <h3 className="font-bold text-slate-900 dark:text-white text-lg">{item.title}</h3>
+                              <p className="mt-2 text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
                                  {item.description}
                               </p>
                            </div>

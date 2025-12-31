@@ -12,16 +12,16 @@ const Hero = () => {
 
         <div className="flex flex-col gap-6 text-center md:text-left order-2 md:order-1">
           <Reveal>
-            <h1 className="text-white text-5xl md:text-7xl font-black leading-tight tracking-tight">
+            <h1 className="text-slate-900 dark:text-white text-5xl md:text-7xl font-black leading-tight tracking-tight">
               Building Logic.<br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary glow-text">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary glow-text-safe">
                 Mining Data.
               </span>
             </h1>
           </Reveal>
 
           <Reveal delay={0.2}>
-            <p className="text-slate-400 text-lg md:text-xl font-normal leading-relaxed max-w-2xl">
+            <p className="text-slate-600 dark:text-slate-400 text-lg md:text-xl font-normal leading-relaxed max-w-2xl">
               I am a <strong>Web Developer</strong> passionate about <strong>Machine Learning</strong>. I build scalable backend systems (Golang, PHP, etc) and interactive frontends (React, Vue, etc), bridging the gap between application and intelligence.
             </p>
           </Reveal>
