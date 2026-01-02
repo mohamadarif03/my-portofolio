@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { useTheme } from '../context/ThemeContext';
-
 const Navbar = () => {
-  const { theme, toggleTheme } = useTheme();
   const [activeSection, setActiveSection] = useState('home');
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -83,15 +80,7 @@ const Navbar = () => {
             })}
           </nav>
           
-          <button 
-            onClick={toggleTheme}
-            className="p-2 rounded-lg text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary hover:bg-black/5 dark:hover:bg-white/5 transition-all"
-            aria-label="Toggle Theme"
-          >
-            <span className="material-symbols-outlined text-xl">
-              {theme === 'dark' ? 'light_mode' : 'dark_mode'}
-            </span>
-          </button>
+
 
           <a href="#contact">
             <button className="flex items-center justify-center rounded-lg h-10 px-5 bg-primary/90 text-white text-sm font-bold hover:bg-primary transition-all glow-violet hover:scale-105 active:scale-95 shadow-lg">
