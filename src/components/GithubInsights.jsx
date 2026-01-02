@@ -164,12 +164,11 @@ const GithubInsights = () => {
     <section className="w-full pt-20" id="github">
       <Reveal>
         <div className="flex flex-col items-center mb-12 text-center">
-          <h2 className="text-secondary text-sm font-bold tracking-widest uppercase mb-2">
+          <h2 className="text-primary text-sm font-bold tracking-widest uppercase mb-2">
             Code Activity
           </h2>
-          <h3 className="text-white text-3xl md:text-4xl font-bold glow-text">
-            MY GITHUB INSIGHTS
-          </h3>
+                            <h3 className="text-slate-900 dark:text-white text-2xl md:text-3xl font-bold glow-text">My Github Insight</h3>
+          
         </div>
       </Reveal>
 

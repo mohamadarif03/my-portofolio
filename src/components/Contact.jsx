@@ -7,7 +7,7 @@ const Contact = () => {
         <section className="w-full max-w-5xl" id="contact">
             <Reveal>
                 <div className="flex flex-col items-center my-12 text-center">
-                    <h2 className="text-secondary text-sm font-bold tracking-widest uppercase mb-2">Get In Touch</h2>
+                    <h2 className="text-primary text-sm font-bold tracking-widest uppercase mb-2">Get In Touch</h2>
                     <h1 className="text-slate-900 dark:text-white text-3xl md:text-5xl font-bold leading-tight glow-text">Let's Build Something Together</h1>
                 </div>
             </Reveal>

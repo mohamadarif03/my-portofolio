@@ -28,7 +28,7 @@ const AllProjects = () => {
                 <Reveal>
                     <div className="flex flex-col md:flex-row items-center justify-between mb-12 gap-6">
                         <div className="flex flex-col items-start">
-                            <h2 className="text-secondary text-sm font-bold tracking-widest uppercase mb-2">My Portfolio</h2>
+                            <h2 className="text-primary text-sm font-bold tracking-widest uppercase mb-2">My Portofolio</h2>
                             <h3 className="text-white text-3xl md:text-4xl font-bold glow-text">All Projects</h3>
                         </div>
                         <Link to="/#projects" className="group flex items-center gap-2 px-6 py-3 rounded-full border border-white/10 bg-white/5 hover:bg-white/10 transition-all text-white font-medium text-sm">

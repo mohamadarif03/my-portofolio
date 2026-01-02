@@ -8,8 +8,8 @@ const Projects = () => {
     <section className="w-full pt-20" id="projects">
       <Reveal>
         <div className="flex flex-col items-center mb-12">
-          <h2 className="text-secondary text-sm font-bold tracking-widest uppercase mb-2">My Portfolio</h2>
-          <h3 className="text-white text-3xl md:text-4xl font-bold glow-text">Selected Projects</h3>
+          <h2 className="text-primary text-sm font-bold tracking-widest uppercase mb-2">My Project</h2>
+                            <h3 className="text-slate-900 dark:text-white text-2xl md:text-3xl font-bold glow-text">Selected Projects</h3>
         </div>
       </Reveal>
 

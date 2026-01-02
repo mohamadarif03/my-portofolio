@@ -13,9 +13,7 @@ const Certificates = () => {
           <h2 className="text-primary text-sm font-bold tracking-widest uppercase mb-2">
             Qualifications
           </h2>
-          <h3 className="text-white text-3xl md:text-4xl font-bold glow-text">
-            Certifications
-          </h3>
+                           <h3 className="text-slate-900 dark:text-white text-2xl md:text-3xl font-bold glow-text">Certifications</h3>
         </div>
       </Reveal>
 

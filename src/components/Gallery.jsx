@@ -10,7 +10,7 @@ const Gallery = () => {
         <section className="w-full pt-20" id="gallery">
             <Reveal>
                 <div className="flex flex-col items-center mb-12">
-                    <h2 className="text-secondary text-sm font-bold tracking-widest uppercase mb-2">Moments</h2>
+                    <h2 className="text-primary text-sm font-bold tracking-widest uppercase mb-2">Moments</h2>
                     <h3 className="text-slate-900 dark:text-white text-3xl md:text-4xl font-bold glow-text">Gallery</h3>
                 </div>
             </Reveal>
