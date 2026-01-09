@@ -8,6 +8,7 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import AllProjects from './pages/AllProjects';
 import AllCertificates from './pages/AllCertificates';
+import About from './pages/About';
 import ProjectDetail from './pages/ProjectDetail';
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
 
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
               <Route path="/projects" element={<AllProjects />} />
               <Route path="/project/:id" element={<ProjectDetail />} />
               <Route path="/certificates" element={<AllCertificates />} />

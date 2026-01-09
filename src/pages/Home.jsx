@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import Hero from '../components/Hero';
-import About from '../components/About';
 import Projects from '../components/Projects';
 import Certificates from '../components/Certificates';
 import Gallery from '../components/Gallery';
@@ -25,7 +24,6 @@ const Home = () => {
     return (
         <main className="w-full flex flex-col items-center gap-24 md:gap-32">
             <Hero />
-            <About />
             <Projects />
             <Gallery />
             <GithubInsights />

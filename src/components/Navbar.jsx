@@ -5,11 +5,11 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   const links = [
-    { name: 'Home', href: '/#home' },
-    { name: 'About', href: '/#about' },
-    { name: 'Projects', href: '/#projects' },
+    { name: 'Home', href: '/' },
+    { name: 'About', href: '/about' },
+    { name: 'Projects', href: '/projects' },
     { name: 'Gallery', href: '/#gallery' },
-    { name: 'Certifications', href: '/#certificates' },
+    { name: 'Certifications', href: '/certificates' },
   ];
 
   useEffect(() => {
