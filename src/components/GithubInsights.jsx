@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+
 import Reveal from './Reveal';
 
 const GithubInsights = () => {
@@ -223,12 +223,10 @@ const GithubInsights = () => {
                         <span>{lang.pct}%</span>
                       </div>
                       <div className="w-full h-2 bg-slate-700/50 rounded-full overflow-hidden">
-                        <motion.div
-                          initial={{ width: 0 }}
-                          whileInView={{ width: `${lang.pct}%` }}
-                          transition={{ duration: 1, delay: 0.5 }}
+                        <div
+                          style={{ width: `${lang.pct}%` }}
                           className={`h-full rounded-full ${lang.color} ${lang.shadow}`}
-                        ></motion.div>
+                        ></div>
                       </div>
                     </div>
                   ))

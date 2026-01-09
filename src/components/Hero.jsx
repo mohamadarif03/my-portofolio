@@ -63,9 +63,7 @@ const Hero = () => {
                 />
               </div>
 
-              <motion.div
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+              <div
                 className="absolute -bottom-4 -right-4 bg-[#1e1b2f] border border-primary/30 p-4 rounded-xl shadow-xl flex items-center gap-3"
               >
                 <span className="material-symbols-outlined text-yellow-400">electric_bolt</span>
@@ -73,7 +71,7 @@ const Hero = () => {
                   <p className="text-xs text-slate-400 font-bold uppercase">Focus</p>
                   <p className="text-sm font-bold text-white">Web & Machine Learning</p>
                 </div>
-              </motion.div>
+              </div>
             </div>
           </Reveal>
         </div>

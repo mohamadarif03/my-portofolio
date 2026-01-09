@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+
 import Reveal from './Reveal';
 
 const Contact = () => {
@@ -21,16 +21,14 @@ const Contact = () => {
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                                     <div className="space-y-2">
                                         <label className="text-slate-700 dark:text-slate-300 text-xs font-bold uppercase tracking-wider">Name</label>
-                                        <motion.input
-                                            whileFocus={{ scale: 1.01, borderColor: "#8B5CF6" }}
+                                        <input
                                             className="w-full rounded-lg bg-slate-50 dark:bg-[#151022]/80 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none transition-colors p-3"
                                             placeholder="John Doe"
                                         />
                                     </div>
                                     <div className="space-y-2">
                                         <label className="text-slate-700 dark:text-slate-300 text-xs font-bold uppercase tracking-wider">Email</label>
-                                        <motion.input
-                                            whileFocus={{ scale: 1.01, borderColor: "#8B5CF6" }}
+                                        <input
                                             className="w-full rounded-lg bg-slate-50 dark:bg-[#151022]/80 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none transition-colors p-3"
                                             placeholder="john@example.com"
                                         />
@@ -38,19 +36,16 @@ const Contact = () => {
                                 </div>
                                 <div className="space-y-2">
                                     <label className="text-slate-700 dark:text-slate-300 text-xs font-bold uppercase tracking-wider">Message</label>
-                                    <motion.textarea
-                                        whileFocus={{ scale: 1.01, borderColor: "#8B5CF6" }}
+                                    <textarea
                                         className="w-full rounded-lg bg-slate-50 dark:bg-[#151022]/80 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none transition-colors p-3 min-h-[150px]"
                                         placeholder="Tell me about your project..."
-                                    ></motion.textarea>
+                                    ></textarea>
                                 </div>
-                                <motion.button
-                                    whileHover={{ scale: 1.02 }}
-                                    whileTap={{ scale: 0.98 }}
+                                <button
                                     className="w-full rounded-lg h-12 bg-gradient-to-r from-primary to-violet-600 text-white font-bold tracking-wide shadow-lg"
                                 >
                                     Send Message
-                                </motion.button>
+                                </button>
                             </form>
                         </div>
                     </Reveal>

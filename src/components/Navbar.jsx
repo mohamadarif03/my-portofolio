@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+
 const Navbar = () => {
   const [activeSection, setActiveSection] = useState('home');
   const [isScrolled, setIsScrolled] = useState(false);
@@ -39,10 +39,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <motion.header 
-      initial={{ y: -100, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
+    <header 
       className={`fixed top-4 left-0 right-0 mx-auto w-[90%] md:w-full max-w-7xl z-50 rounded-2xl transition-all duration-300 ${
         isScrolled 
           ? "glassmorphism px-6 py-4" 
@@ -90,7 +87,7 @@ const Navbar = () => {
         </div>
 
       </div>
-    </motion.header>
+    </header>
   );
 };
 

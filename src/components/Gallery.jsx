@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Reveal from './Reveal';
 import { galleryData } from '../data';
-import { motion, AnimatePresence } from 'framer-motion';
+
 
 const Gallery = () => {
     const [selectedItem, setSelectedItem] = useState(null);
@@ -42,22 +42,15 @@ const Gallery = () => {
                 ))}
             </div>
 
-            {/* Modal */}
-            <AnimatePresence>
+
                 {selectedItem && (
                     <div className="fixed inset-0 z-[60] flex items-center justify-center p-4 sm:p-6">
-                        <motion.div 
-                            initial={{ opacity: 0 }} 
-                            animate={{ opacity: 1 }} 
-                            exit={{ opacity: 0 }}
+                        <div 
                             className="absolute inset-0 bg-black/80 backdrop-blur-md"
                             onClick={() => setSelectedItem(null)}
                         />
                         
-                        <motion.div 
-                            initial={{ opacity: 0, scale: 0.9, y: 20 }} 
-                            animate={{ opacity: 1, scale: 1, y: 0 }} 
-                            exit={{ opacity: 0, scale: 0.9, y: 20 }}
+                        <div 
                             className="relative w-full max-w-4xl bg-[#1e2330] border border-white/10 rounded-2xl overflow-hidden shadow-2xl flex flex-col md:flex-row max-h-[90vh]"
                         >
                             <button 
@@ -84,10 +77,10 @@ const Gallery = () => {
                                     {selectedItem.detail || "No details available."}
                                 </p>
                             </div>
-                        </motion.div>
+                        </div>
                     </div>
                 )}
-            </AnimatePresence>
+
         </section>
     );
 };
