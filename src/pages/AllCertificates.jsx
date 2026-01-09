@@ -1,79 +1,111 @@
-import React from 'react';
 import Reveal from '../components/Reveal';
-import { certificatesData } from '../data';
-import { Link } from 'react-router-dom';
 
 const AllCertificates = () => {
+    
+    // Function to generate random activity levels for the stats grid
+    const getRandomLevel = () => {
+        const levels = ['bg-slate-200 dark:bg-slate-800', 'bg-primary/20', 'bg-primary/40', 'bg-primary/60', 'bg-primary'];
+        return levels[Math.floor(Math.random() * levels.length)];
+    };
 
     return (
-        <section className="w-full pt-32 px-4 mb-20">
-            <div className="max-w-7xl mx-auto">
-                <Reveal>
-                    <div className="flex flex-col md:flex-row items-center justify-between mb-12 gap-6">
-                        <div className="flex flex-col items-start">
-                            <h2 className="text-primary text-sm font-bold tracking-widest uppercase mb-2">
-                                Qualifications
-                            </h2>
-                            <h3 className="text-white text-3xl md:text-4xl font-bold glow-text">
-                                All Certifications
-                            </h3>
-                        </div>
-                        <Link to="/#certificates" className="group flex items-center gap-2 px-6 py-3 rounded-full border border-white/10 bg-white/5 hover:bg-white/10 transition-all text-white font-medium text-sm">
-                            <span className="material-symbols-outlined text-lg group-hover:-translate-x-1 transition-transform">arrow_back</span>
+        <div className="min-h-screen bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-200 font-sans transition-colors duration-300">
+            
+            {/* Header Section */}
+            <header className="relative pt-32 pb-20 px-6 overflow-hidden min-h-[400px]">
+                <div className="absolute inset-0 grid-pattern-radial opacity-40"></div>
+                
+                {/* Abstract Lines */}
+                <div className="abstract-line w-[300px] h-[100px] -rotate-45 -top-10 -right-20 border-primary"></div>
+                <div className="abstract-line w-[400px] h-[120px] -rotate-45 top-20 -right-40 border-purple-500 opacity-50"></div>
+
+                <div className="max-w-7xl mx-auto relative z-10">
+                    <div className="flex flex-col items-start gap-4">
+                        <Link to="/" className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors mb-4 font-medium">
+                            <span className="material-symbols-outlined text-lg">arrow_back</span>
                             Back to Home
                         </Link>
+                        
+                        <h1 className="text-6xl md:text-8xl font-black mb-6 tracking-tight text-slate-900 dark:text-white">
+                            Certifications<span className="text-primary">.</span>
+                        </h1>
+                        <p className="text-xl md:text-2xl text-slate-500 dark:text-slate-400 max-w-2xl leading-relaxed">
+                            A showcase of professional credentials and specialized training programs I've completed to master my craft.
+                        </p>
                     </div>
-                </Reveal>
+                </div>
+            </header>
 
+            <main className="max-w-7xl mx-auto px-6 pb-40 space-y-32">
+                
+                {certificatesData.map((cert, index) => (
+                    <section key={index} className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                        {/* Text Content - Alternates order */}
+                        <div className={`lg:col-span-5 ${index % 2 === 0 ? 'order-2 lg:order-1' : 'order-2 lg:order-2 lg:pl-10'}`}>
+                            <div className="mb-4">
+                                <span className={`text-xs font-mono font-bold uppercase tracking-widest px-3 py-1 rounded-full bg-primary/10 text-primary`}>
+                                    {cert.issuer}
+                                </span>
+                            </div>
+                            <h2 className="text-4xl font-extrabold mb-6 dark:text-white leading-tight">
+                                {cert.title}.
+                            </h2>
+                            <p className="text-slate-600 dark:text-slate-400 text-lg mb-8 leading-relaxed">
+                                Professional certification demonstrating proficiency in {cert.title} issued by {cert.issuer}.
+                            </p>
+                            <div className="flex items-center gap-4">
+                                <a 
+                                    href={cert.pdf} 
+                                    target="_blank" 
+                                    rel="noopener noreferrer"
+                                    className="bg-primary hover:bg-indigo-600 text-white px-6 py-3 rounded-xl font-bold flex items-center gap-2 transition-all glow-hover group"
+                                >
+                                    View Credential
+                                    <span className="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_right_alt</span>
+                                </a>
+                                {cert.verificationLink && (
+                                    <a 
+                                        href={cert.verificationLink}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-slate-500 hover:text-primary transition-colors font-medium flex items-center gap-2"
+                                    >
+                                        Verify
+                                        <span className="material-symbols-outlined text-[18px]">open_in_new</span>
+                                    </a>
+                                )}
+                            </div>
+                        </div>
 
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {certificatesData.map((cert, index) => (
-                        <Reveal key={index} delay={index * 0.1}>
-                            <div className="cert-card flex flex-col gap-4 p-5 rounded-2xl border border-white/10 glassmorphism transition-all duration-300 h-full hover:-translate-y-2 hover:border-primary/30">
-
-                                <div className="w-full h-40 bg-center bg-no-repeat bg-cover rounded-xl shadow-lg relative overflow-hidden group">
-                                    <img
-                                        src={cert.image}
-                                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                                        alt={cert.title}
-                                    />
-                                    <div className={`absolute inset-0 ${cert.overlay} mix-blend-overlay`}></div>
-                                </div>
-
-                                <div className="flex flex-col gap-2 flex-1">
-                                    <p className="text-white text-lg font-bold leading-tight">
-                                        {cert.title}
-                                    </p>
-                                    <p className="text-slate-400 text-sm">{cert.issuer}</p>
-
-                                    <div className="mt-auto pt-4 flex flex-col sm:flex-row gap-3">
-                                        <a
-                                            href={cert.pdf}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className={`flex-1 flex items-center justify-center gap-2 py-2.5 px-3 rounded-lg border ${cert.btnBorder} ${cert.btnText} ${cert.btnHover} hover:text-white transition-all text-sm font-bold bg-transparent`}
-                                        >
-                                            <span className="material-symbols-outlined text-[18px]">visibility</span>
-                                            View
-                                        </a>
-                                        <a
-                                            href={cert.verificationLink}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="flex-1 flex items-center justify-center gap-2 py-2.5 px-3 rounded-lg border border-white/10 bg-white/5 hover:bg-white/10 text-slate-300 hover:text-white transition-all text-sm font-medium"
-                                        >
-                                            <span className="material-symbols-outlined text-[18px]">verified</span>
-                                            Verify
-                                        </a>
+                        {/* Image Showcase - Alternates order */}
+                        <div className={`lg:col-span-7 ${index % 2 === 0 ? 'order-1 lg:order-2' : 'order-1 lg:order-1'}`}>
+                            <div className="relative group">
+                                <div className={`w-full aspect-[16/10] bg-slate-900 rounded-2xl overflow-hidden shadow-2xl border border-white/5 transition-transform duration-500 group-hover:-translate-y-2 ${index % 2 === 0 ? 'group-hover:rotate-1' : 'group-hover:-rotate-1'}`}>
+                                    {/* Browser Bar */}
+                                    <div className="h-8 bg-slate-800/50 flex items-center px-4 gap-1.5 border-b border-white/5">
+                                        <div className="w-3 h-3 rounded-full bg-red-500/50"></div>
+                                        <div className="w-3 h-3 rounded-full bg-amber-500/50"></div>
+                                        <div className="w-3 h-3 rounded-full bg-emerald-500/50"></div>
+                                    </div>
+                                    {/* Content */}
+                                    <div className="relative h-full bg-white dark:bg-card-dark flex items-center justify-center p-8">
+                                        <img 
+                                            src={cert.image} 
+                                            alt={cert.title} 
+                                            className="w-full h-full object-cover rounded-lg shadow-lg" 
+                                        />
                                     </div>
                                 </div>
+                                
+                                {/* Decorative Badge (Only show on first item or alternate) */}
+
                             </div>
-                        </Reveal>
-                    ))}
-                </div>
-            </div>
-        </section>
+                        </div>
+                    </section>
+                ))}
+                
+            </main>
+        </div>
     );
 };
 

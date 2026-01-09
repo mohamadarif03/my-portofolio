@@ -16,6 +16,7 @@ function App() {
       <div className="bg-slate-50 dark:bg-background-dark font-display text-slate-900 dark:text-white selection:bg-primary selection:text-white min-h-screen relative transition-colors duration-300">
 
         <div className="fixed inset-0 z-0 pointer-events-none">
+          <div className="absolute inset-0 bg-grid-pattern"></div>
           {/* <DarkVeil /> */}
 
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.1)_100%)] dark:bg-[radial-gradient(circle_at_center,transparent_0%,rgba(11,15,25,0.8)_100%)]"></div>

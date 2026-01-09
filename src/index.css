@@ -22,6 +22,40 @@
   .glassmorphism {
     @apply bg-white/90 dark:bg-[#1e1b2f]/90 backdrop-blur-[2px] border border-slate-200 dark:border-violet-500/15 shadow-lg;
   }
+
+  /* Existing grid pattern (linear) */
+  .bg-grid-pattern {
+    background-size: 50px 50px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+  }
+  .dark .bg-grid-pattern {
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  }
+
+  /* New styles from user request */
+  .grid-pattern-radial {
+    background-image: radial-gradient(rgba(99, 102, 241, 0.15) 1px, transparent 1px);
+    background-size: 30px 30px;
+  }
+  
+  .glass {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .glow-hover:hover {
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.4);
+  }
+
+  .abstract-line {
+    position: absolute;
+    border: 2px solid rgba(99, 102, 241, 0.2);
+    border-radius: 9999px;
+    pointer-events: none;
+  }
 }
 
 html {
