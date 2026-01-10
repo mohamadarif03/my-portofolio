@@ -1,4 +1,6 @@
 import Reveal from '../components/Reveal';
+import { Link } from 'react-router-dom';
+import { certificatesData } from '../data';
 
 const AllCertificates = () => {
     

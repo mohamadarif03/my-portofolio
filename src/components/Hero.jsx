@@ -1,9 +1,20 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Reveal from './Reveal';
+import LogoLoop from './LogoLoop';
+import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiGo, SiPhp } from 'react-icons/si';
 
 import CV from '../assets/Mohamad Arif - CV.pdf';
 import profilePhoto from '../assets/photo.jpg';
+
+const techLogos = [
+  { node: <SiReact />, title: "React", href: "https://react.dev" },
+  { node: <SiNextdotjs />, title: "Next.js", href: "https://nextjs.org" },
+  { node: <SiTypescript />, title: "TypeScript", href: "https://www.typescriptlang.org" },
+  { node: <SiTailwindcss />, title: "Tailwind CSS", href: "https://tailwindcss.com" },
+  { node: <SiGo />, title: "Golang", href: "https://go.dev" },
+  { node: <SiPhp />, title: "PHP", href: "https://www.php.net" },
+];
 
 const Hero = () => {
   return (
@@ -75,6 +86,25 @@ const Hero = () => {
             </div>
           </Reveal>
         </div>
+      </div>
+
+      <div className="mt-20 md:mt-32 w-full">
+        <Reveal delay={0.6}>
+          <p className="text-center text-slate-500 font-medium mb-8 text-sm uppercase tracking-widest">
+            Tech Stack I Use
+          </p>
+          <LogoLoop
+            logos={techLogos}
+            speed={30}
+            direction="left"
+            logoHeight={40}
+            gap={60}
+            hoverSpeed={5}
+            scaleOnHover
+            fadeOut
+            ariaLabel="My Tech Stack"
+          />
+        </Reveal>
       </div>
     </section>
   );
