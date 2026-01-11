@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Analytics } from "@vercel/analytics/react";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import Navbar from './components/Navbar';
@@ -49,6 +50,7 @@ function App() {
             </div>
         )}
       </div>
+      <Analytics />
     </BrowserRouter>
   );
 }
