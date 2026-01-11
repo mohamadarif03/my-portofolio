@@ -1,8 +1,15 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useSpring } from 'framer-motion';
 import Reveal from '../components/Reveal';
 
 const About = () => {
+    const { scrollYProgress } = useScroll();
+    const scaleX = useSpring(scrollYProgress, {
+        stiffness: 100,
+        damping: 30,
+        restDelta: 0.001
+    });
+
     // Animation variants
     const containerVariants = {
         hidden: { opacity: 0 },
@@ -24,7 +31,13 @@ const About = () => {
     };
 
   return (
-    <div className="min-h-screen bg-transparent px-4 sm:px-6 py-20 md:py-32 overflow-hidden">
+    <div className="min-h-screen bg-transparent px-4 sm:px-6 py-20 md:py-32 overflow-hidden selection:bg-primary/30 selection:text-white">
+        {/* Scroll Progress Bar */}
+        <motion.div
+            className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary to-purple-500 origin-left z-50"
+            style={{ scaleX }}
+        />
+
       <div className="max-w-6xl mx-auto relative z-10">
         
         {/* Header Section */}

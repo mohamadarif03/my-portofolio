@@ -14,12 +14,6 @@ const AllCertificates = () => {
     const HeroSection = () => {
         return (
             <section className="relative min-h-[60vh] flex flex-col items-center justify-center pt-32 pb-20 overflow-hidden">
-                {/* Background Particles/Gradient */}
-                <div className="absolute inset-0 z-0">
-                    <div className="absolute top-[-20%] left-[-10%] w-[500px] h-[500px] bg-purple-600/20 rounded-full blur-[120px] mix-blend-screen animate-pulse-slow" />
-                    <div className="absolute bottom-[-20%] right-[-10%] w-[500px] h-[500px] bg-primary/20 rounded-full blur-[120px] mix-blend-screen animate-pulse-slow delay-1000" />
-                </div>
-
                 <div className="container mx-auto px-6 relative z-10 text-center">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
