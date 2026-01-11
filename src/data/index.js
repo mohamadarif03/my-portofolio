@@ -50,7 +50,7 @@ export const projectsData = [
         id: "get-skill",
         title: "Get Skill",
         tag: "Website",
-        description: "An online learning platform that sells digital learning materials and courses directly to users, featuring secure payments, role-based access, and a structured learning dashboard.",
+        description: "Addressed the need for accessible digital education by creating a secure marketplace for creators. Enabled seamless transactions and role-based learning, resulting in increased creator revenue and user engagement.",
         features: [
             "Direct sales of digital learning materials and courses",
             "User authentication and access control",
@@ -79,7 +79,7 @@ export const projectsData = [
         id: "cobylearn-ai",
         title: "CobyLearnAI",
         tag: "Website",
-        description: "An AI-powered learning assistant that helps users summarize learning materials from PDFs, YouTube videos, and text, while encouraging consistent study habits through gamification and learning analytics.",
+        description: "Solving information overload for students by leveraging Gemini AI to summarize complex materials instantly. The platform integrates gamification to boost study consistency and retention.",
         features: [
             "AI-based summarization from PDF, YouTube, and text input",
             "Integration with Gemini AI model for content understanding",
@@ -109,7 +109,7 @@ export const projectsData = [
         id: "dolfin-brain-lms",
         title: "Dolfin Brain",
         tag: "Website",
-        description: "A learning management system focused on providing CPNS exam preparation courses, handling student registration, course access, and secure online transactions within a structured learning platform.",
+        description: "Streamlined CPNS exam preparation by building a dedicated LMS. The system simplifies course registration and access, providing a structured environment for thousands of aspiring civil servants.",
         features: [
             "CPNS exam preparation course management",
             "Student registration and authentication system",
@@ -137,7 +137,7 @@ export const projectsData = [
         id: "sipjaki-pasuruan",
         title: "SIPJAKI Kabupaten Pasuruan",
         tag: "Website",
-        description: "A government web-based information system designed to improve transparency and accessibility of construction service data in Pasuruan Regency, while strengthening business networking within the regional construction supply chain.",
+        description: "Digitized regional construction data to improve transparency and accessibility. This government portal connects businesses and stakeholders, fostering a more efficient local supply chain.",
         features: [
             "Centralized database of construction service businesses",
             "Public access to verified construction-related information",
@@ -164,7 +164,7 @@ export const projectsData = [
         id: "squad-hub",
         title: "Squad Hub",
         tag: "Website",
-        description: "A versatile membership-based e-commerce platform that supports physical product sales, service offerings, and online reservation systems within a single integrated ecosystem.",
+        description: "Unified commerce and booking operations for a multi-service business. The ecosystem seamlessly integrates product sales, service booking, and memberships, boosting operational efficiency.",
         features: [
             "Membership-based access and user management",
             "E-commerce system for physical product sales",
@@ -192,7 +192,7 @@ export const projectsData = [
         id: "kejar-taff",
         title: "Kejar Taff",
         tag: "Website",
-        description: "A task management system designed for field officers to efficiently track and monitor on-site car leasing activities, providing real-time visibility and structured workflow management.",
+        description: "Optimized field operations for leasing officers with a real-time task management system. Improved accountability and response times through transparent tracking and reporting.",
         features: [
             "Task assignment and management for field officers",
             "Activity tracking and field reporting system",
