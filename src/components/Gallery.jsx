@@ -19,7 +19,7 @@ const Gallery = () => {
                 {galleryData.map((item, index) => (
                     <Reveal key={item.id} delay={index * 0.1}>
                         <div 
-                            className="group relative aspect-video rounded-2xl overflow-hidden cursor-pointer shadow-lg shadow-black/30 border border-white/5 hover:border-primary/50 transition-all duration-300 transform hover:scale-[1.02]"
+                            className="group relative aspect-video rounded-2xl overflow-hidden cursor-pointer shadow-lg shadow-black/30 border border-white/5 hover:border-primary/50 transition-all duration-300 transform hover:scale-[1.05]"
                             onClick={() => setSelectedItem(item)}
                         >
                             <img 

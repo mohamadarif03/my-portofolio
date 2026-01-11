@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import Hero from '../components/Hero';
+import KeyStats from '../components/KeyStats';
 import Projects from '../components/Projects';
-import Certificates from '../components/Certificates';
 import Gallery from '../components/Gallery';
+import Certificates from '../components/Certificates';
+import HomeAbout from '../components/HomeAbout';
 import Contact from '../components/Contact';
-import GithubInsights from '../components/GithubInsights';
 
 const Home = () => {
     const { hash } = useLocation();
@@ -22,12 +23,13 @@ const Home = () => {
     }, [hash]);
 
     return (
-        <main className="w-full flex flex-col items-center gap-24 md:gap-32">
+        <main className="w-full flex flex-col items-center gap-20 md:gap-32 pb-20">
             <Hero />
+            <KeyStats />
             <Projects />
             <Gallery />
-            <GithubInsights />
             <Certificates />
+            <HomeAbout />
             <Contact />
         </main>
     );

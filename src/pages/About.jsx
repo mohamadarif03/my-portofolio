@@ -11,14 +11,14 @@ const About = () => {
           
           <Reveal delay={0.1}>
             <h1 className="font-display text-4xl md:text-6xl font-black mb-6 tracking-tight leading-tight">
-                Crafting <span className="text-primary">Digital Solutions</span> <br/>
-                <span className="text-slate-400">Through Data & Code</span>
+                Web Developer & <br/>
+                <span className="text-primary">Machine Learning Enthusiast</span>
             </h1>
           </Reveal>
           
           <Reveal delay={0.2}>
             <p className="max-w-2xl mx-auto text-slate-600 dark:text-slate-400 text-lg leading-relaxed">
-                I'm a passionate developer bridging the gap between robust web architecture and intelligent data insights. With a dual focus on engineering and analytics, I build products that are as smart as they are fast.
+                I am a passionate developer bridging the gap between robust web architecture and intelligent data insights. As a Machine Learning Enthusiast, I integrate smart algorithms into scalable web applications to create smarter digital products.
             </p>
           </Reveal>
         </header>

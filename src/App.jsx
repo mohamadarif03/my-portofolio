@@ -14,7 +14,7 @@ import About from './pages/About';
 import ProjectDetail from './pages/ProjectDetail';
 
 function App() {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(() => window.location.pathname === '/');
 
   return (
     <BrowserRouter>

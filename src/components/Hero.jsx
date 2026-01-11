@@ -16,20 +16,35 @@ const techLogos = [
   { node: <SiPhp />, title: "PHP", href: "https://www.php.net" },
 ];
 
-const Typewriter = ({ text, delay }) => {
+const Typewriter = ({ texts, delay }) => {
     const [currentText, setCurrentText] = useState('');
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [isDeleting, setIsDeleting] = useState(false);
+    const [textIndex, setTextIndex] = useState(0);
   
     useEffect(() => {
-      if (currentIndex < text.length) {
-        const timeout = setTimeout(() => {
-          setCurrentText(prev => prev + text[currentIndex]);
-          setCurrentIndex(prev => prev + 1);
-        }, 100); // Typing speed
-    
-        return () => clearTimeout(timeout);
-      }
-    }, [currentIndex, delay, text]);
+      const timeout = setTimeout(() => {
+        const currentString = texts[textIndex];
+        
+        if (isDeleting) {
+            setCurrentText(prev => prev.slice(0, -1));
+            if (currentText === '') {
+                setIsDeleting(false);
+                setTextIndex(prev => (prev + 1) % texts.length);
+                setCurrentIndex(0);
+            }
+        } else {
+            setCurrentText(currentString.slice(0, currentIndex + 1));
+            setCurrentIndex(prev => prev + 1);
+            if (currentIndex === currentString.length) {
+                setTimeout(() => setIsDeleting(true), 2000); // Wait before deleting
+                return;
+            }
+        }
+      }, isDeleting ? 50 : 100); // Typing speed vs deleting speed
+  
+      return () => clearTimeout(timeout);
+    }, [currentIndex, isDeleting, texts, textIndex, currentText]);
   
     return <span>{currentText}</span>;
 };
@@ -75,7 +90,7 @@ const Hero = () => {
             <div className="h-8 md:h-12 text-2xl md:text-4xl font-bold text-slate-400 mt-2">
                 <span className="mr-2">I am a</span>
                 <span className="text-primary">
-                    <Typewriter text="Web Developer" delay={1} />
+                    <Typewriter texts={["Web Developer", "ML Enthusiast"]} delay={1} />
                 </span>
                 <span className="animate-blink">|</span>
             </div>
@@ -165,7 +180,7 @@ const Hero = () => {
                 </div>
                 <div>
                   <p className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Fast & Precise</p>
-                  <p className="text-sm font-bold text-white">Fullstack Dev</p>
+                  <p className="text-sm font-bold text-white">Web & ML Dev</p>
                 </div>
               </motion.div>
             </div>
