@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
-  const [activeSection, setActiveSection] = useState('home');
   const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
 
   const links = [
     { name: 'Home', href: '/' },
@@ -17,19 +18,6 @@ const Navbar = () => {
         setIsScrolled(true);
       } else {
         setIsScrolled(false);
-      }
-
-      const sections = ['home', 'about', 'projects', 'gallery', 'certificates', 'contact'];
-      
-      for (const sectionId of sections) {
-        const element = document.getElementById(sectionId);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          if (rect.top >= -100 && rect.top < window.innerHeight / 2) {
-            setActiveSection(sectionId);
-            break; 
-          }
-        }
       }
     };
 
@@ -56,13 +44,12 @@ const Navbar = () => {
         <div className="hidden md:flex flex-1 justify-end items-center gap-8">
           <nav className="flex items-center gap-6">
             {links.map((link) => {
-              const sectionId = link.href.replace('#', '');
-              const isActive = activeSection === sectionId;
+              const isActive = location.pathname === link.href;
 
               return (
-                <a 
+                <Link 
                   key={link.name} 
-                  href={link.href}
+                  to={link.href}
                   className={`text-sm font-medium transition-colors relative group ${
                     isActive ? "text-slate-900 dark:text-white" : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
                   }`}
@@ -71,7 +58,7 @@ const Navbar = () => {
                   <span className={`absolute -bottom-1 left-0 h-0.5 bg-primary transition-all duration-300 ${
                     isActive ? "w-full" : "w-0 group-hover:w-full"
                   }`}></span>
-                </a>
+                </Link>
               );
             })}
           </nav>
