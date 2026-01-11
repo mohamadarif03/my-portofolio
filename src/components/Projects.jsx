@@ -5,9 +5,8 @@ import { Link } from 'react-router-dom';
 
 const Projects = () => {
     const targetRef = useRef(null);
-    // Saya sedikit menaikkan persentase scroll karena start-nya sekarang lebih ke kanan (masuk container)
-    // Kamu mungkin perlu menyesuaikan angka ini lagi (-50% atau -60%) agar card terakhir terlihat penuh
-    const [endValue, setEndValue] = useState("-55%"); 
+    const sliderRef = useRef(null);
+    const [xRange, setXRange] = useState(["0%", "0%"]);
 
     const { scrollYProgress } = useScroll({
         target: targetRef,
@@ -15,22 +14,32 @@ const Projects = () => {
     });
 
     useEffect(() => {
-        const handleResize = () => {
-            if (window.innerWidth < 768) {
-                setEndValue("-85%"); 
-            } else if (window.innerWidth < 1024) {
-                setEndValue("-70%"); 
-            } else {
-                setEndValue("-65%"); 
+        const calculateWidth = () => {
+            if (sliderRef.current) {
+                const sliderWidth = sliderRef.current.scrollWidth;
+                const windowWidth = window.innerWidth;
+                // Add some padding so the last card isn't glued to the edge
+                const containerPadding = windowWidth > 768 ? 100 : 32; 
+                
+                // Calculate correct scroll distance
+                const distance = sliderWidth - windowWidth + containerPadding;
+                const finalX = distance > 0 ? -distance : 0;
+                
+                setXRange(["0px", `${finalX}px`]);
             }
         };
 
-        handleResize();
-        window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
+        calculateWidth();
+        window.addEventListener('resize', calculateWidth);
+        const timeoutId = setTimeout(calculateWidth, 500); // Safety fallback
+
+        return () => {
+            window.removeEventListener('resize', calculateWidth);
+            clearTimeout(timeoutId);
+        };
     }, []);
 
-    const x = useTransform(scrollYProgress, [0, 1], ["0%", endValue]);
+    const x = useTransform(scrollYProgress, [0, 1], xRange);
 
     return (
         <section ref={targetRef} className="relative h-[300vh]" id="projects">
@@ -50,6 +59,7 @@ const Projects = () => {
 
                     {/* Cards Slider */}
                     <motion.div
+                        ref={sliderRef}
                         style={{ x }}
                         className="flex gap-6 w-max"
                     >
