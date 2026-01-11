@@ -19,32 +19,38 @@ const Projects = () => {
                 const sliderWidth = sliderRef.current.scrollWidth;
                 const windowWidth = window.innerWidth;
                 
-                // We need to account for the fact that the slider doesn't start at the exact left edge of the screen.
-                // It starts inside a centered container.
-                // We get the distance of the container from the left edge of the viewport.
+                // We want to ensure we scroll enough to see the very last card + some whitespace.
+                // Formula: Total Content Width - Visible Screen Width + Extra Padding
+                // We add a large padding (e.g., 50vw or 600px) to force the scroll to go "too far"
+                // ensuring the last card is definitely cleared.
+                const extraPadding = windowWidth > 768 ? 600 : 200;
+                
+                // Account for the container offset (centering)
                 const parent = sliderRef.current.parentElement;
-                const initialOffset = parent ? parent.offsetLeft : 0;
+                const offset = parent ? parent.offsetLeft : 0;
                 
-                // Add padding so the last card has some breathing room at the end
-                // Increasing this ensures we drag FURTHER left than strictly necessary, 
-                // guaranteed to clear the last card.
-                const endPadding = windowWidth > 768 ? 600 : 150; 
-                
-                // Total distance to shift left = 
-                // (Length of Slider) + (Start Position) - (Viewport Width) + (A bit of extra space)
-                const distance = sliderWidth + initialOffset - windowWidth + endPadding;
-                
+                const distance = sliderWidth - windowWidth + offset + extraPadding;
                 const finalX = distance > 0 ? -distance : 0;
                 
                 setXRange(["0px", `${finalX}px`]);
             }
         };
 
-        calculateWidth();
+        // ResizeObserver is more robust than just window 'resize'
+        const resizeObserver = new ResizeObserver(() => {
+            calculateWidth();
+        });
+
+        if (sliderRef.current) {
+            resizeObserver.observe(sliderRef.current);
+        }
+
+        // Also recalculate on window resize just in case
         window.addEventListener('resize', calculateWidth);
-        const timeoutId = setTimeout(calculateWidth, 500); // Safety fallback
+        const timeoutId = setTimeout(calculateWidth, 1000); // Late fallback
 
         return () => {
+            resizeObserver.disconnect();
             window.removeEventListener('resize', calculateWidth);
             clearTimeout(timeoutId);
         };
@@ -53,7 +59,7 @@ const Projects = () => {
     const x = useTransform(scrollYProgress, [0, 1], xRange);
 
     return (
-        <section ref={targetRef} className="relative h-[600vh]" id="projects">
+        <section ref={targetRef} className="relative h-[800vh]" id="projects">
             <div className="sticky top-0 h-screen flex flex-col justify-center items-center w-full overflow-hidden">
                 
                 {/* PERUBAHAN UTAMA DI SINI:
