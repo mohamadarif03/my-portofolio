@@ -20,7 +20,7 @@
   }
 
   .glassmorphism {
-    @apply bg-white/90 dark:bg-[#1e1b2f]/90 backdrop-blur-[2px] border border-slate-200 dark:border-violet-500/15 shadow-lg;
+    @apply bg-[#1e1b2f]/90 backdrop-blur-[2px] border border-violet-500/15 shadow-lg;
   }
 
   /* Existing grid pattern (linear) */
@@ -58,6 +58,8 @@
   }
 }
 
-html {
+html, body {
   scroll-behavior: smooth;
+  background-color: #0B0F19; 
+  color: white;
 }
