@@ -18,11 +18,22 @@ const Projects = () => {
             if (sliderRef.current) {
                 const sliderWidth = sliderRef.current.scrollWidth;
                 const windowWidth = window.innerWidth;
-                // Add some padding so the last card isn't glued to the edge
-                const containerPadding = windowWidth > 768 ? 100 : 32; 
                 
-                // Calculate correct scroll distance
-                const distance = sliderWidth - windowWidth + containerPadding;
+                // We need to account for the fact that the slider doesn't start at the exact left edge of the screen.
+                // It starts inside a centered container.
+                // We get the distance of the container from the left edge of the viewport.
+                const parent = sliderRef.current.parentElement;
+                const initialOffset = parent ? parent.offsetLeft : 0;
+                
+                // Add padding so the last card has some breathing room at the end
+                // Increasing this ensures we drag FURTHER left than strictly necessary, 
+                // guaranteed to clear the last card.
+                const endPadding = windowWidth > 768 ? 600 : 150; 
+                
+                // Total distance to shift left = 
+                // (Length of Slider) + (Start Position) - (Viewport Width) + (A bit of extra space)
+                const distance = sliderWidth + initialOffset - windowWidth + endPadding;
+                
                 const finalX = distance > 0 ? -distance : 0;
                 
                 setXRange(["0px", `${finalX}px`]);
@@ -42,7 +53,7 @@ const Projects = () => {
     const x = useTransform(scrollYProgress, [0, 1], xRange);
 
     return (
-        <section ref={targetRef} className="relative h-[300vh]" id="projects">
+        <section ref={targetRef} className="relative h-[600vh]" id="projects">
             <div className="sticky top-0 h-screen flex flex-col justify-center items-center w-full overflow-hidden">
                 
                 {/* PERUBAHAN UTAMA DI SINI:
