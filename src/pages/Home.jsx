@@ -7,6 +7,7 @@ import Projects from '../components/Projects';
 import Gallery from '../components/Gallery';
 import Certificates from '../components/Certificates';
 import HomeAbout from '../components/HomeAbout';
+import GithubInsights from '../components/GithubInsights';
 import Contact from '../components/Contact';
 
 const Home = () => {
@@ -39,6 +40,7 @@ const Home = () => {
             
             <Hero />
             <KeyStats />
+            <GithubInsights />
             <Projects />
             <Gallery />
             <Certificates />

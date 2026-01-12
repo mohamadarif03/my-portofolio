@@ -65,7 +65,7 @@ const Navbar = () => {
           
 
 
-          <a href="#contact">
+          <a href="/#contact">
             <button className="flex items-center justify-center rounded-lg h-10 px-5 bg-primary/90 text-white text-sm font-bold hover:bg-primary transition-all glow-violet hover:scale-105 active:scale-95 shadow-lg">
               Get In Touch
             </button>

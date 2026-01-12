@@ -4,6 +4,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
+import ScrollToTopHandler from './components/ScrollToTopHandler';
 import LoadingScreen from './components/LoadingScreen';
 
 // import DarkVeil from './components/DarkVeil';
@@ -19,6 +21,7 @@ function App() {
 
   return (
     <BrowserRouter>
+      <ScrollToTopHandler />
       <div className="bg-background-dark font-display text-white selection:bg-primary selection:text-white min-h-screen relative">
         
         <AnimatePresence mode='wait'>
@@ -47,6 +50,7 @@ function App() {
 
                 <Footer />
               </div>
+              <ScrollToTop />
             </div>
         )}
       </div>
