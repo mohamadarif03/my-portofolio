@@ -10,7 +10,7 @@ const About = () => {
         restDelta: 0.001
     });
 
-    // Animation variants
+
     const containerVariants = {
         hidden: { opacity: 0 },
         visible: {
@@ -32,7 +32,6 @@ const About = () => {
 
   return (
     <div className="min-h-screen bg-transparent px-4 sm:px-6 py-20 md:py-32 overflow-hidden selection:bg-primary/30 selection:text-white">
-        {/* Scroll Progress Bar */}
         <motion.div
             className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary to-purple-500 origin-left z-50"
             style={{ scaleX }}
@@ -40,7 +39,6 @@ const About = () => {
 
       <div className="max-w-6xl mx-auto relative z-10">
         
-        {/* Header Section */}
         <motion.header 
             initial="hidden"
             animate="visible"
@@ -61,7 +59,6 @@ const About = () => {
           </motion.div>
         </motion.header>
 
-        {/* Beyond The Code Section */}
         <section className="mb-32">
             <Reveal>
                  <div className="glassmorphism rounded-3xl p-8 md:p-12 border border-white/10 relative overflow-hidden">
@@ -104,7 +101,6 @@ const About = () => {
             </Reveal>
         </section>
 
-        {/* Expertise Section */}
         <section className="mb-32" id="expertise">
           <Reveal>
             <div className="text-center mb-16">
@@ -154,7 +150,6 @@ const About = () => {
           </div>
         </section>
 
-        {/* Journey Section */}
         <section className="relative" id="journey">
           <Reveal>
             <div className="text-center mb-24">
@@ -173,7 +168,6 @@ const About = () => {
                  />
             </div>
             
-            {/* Timeline Item 1 */}
             <div className="relative grid md:grid-cols-2 gap-8 mb-20 items-center group">
               <div className="order-2 md:order-1 md:text-right">
                 <Reveal delay={0.1} width="100%">
@@ -193,7 +187,6 @@ const About = () => {
               </div>
             </div>
 
-            {/* Timeline Item 2 */}
             <div className="relative grid md:grid-cols-2 gap-8 mb-20 items-center group">
               <div className="flex items-center justify-center relative">
                  <div className="w-4 h-4 rounded-full bg-[#0B0F19] border-2 border-secondary z-10 hidden md:block group-hover:scale-150 group-hover:bg-secondary transition-all duration-300"></div>
@@ -213,7 +206,6 @@ const About = () => {
               </div>
             </div>
 
-            {/* Timeline Item 3 */}
             <div className="relative grid md:grid-cols-2 gap-8 mb-20 items-center group">
               <div className="order-2 md:order-1 md:text-right">
                 <Reveal delay={0.1} width="100%">
@@ -233,7 +225,6 @@ const About = () => {
               </div>
             </div>
 
-            {/* Timeline Item 4 */}
             <div className="relative grid md:grid-cols-2 gap-8 mb-20 items-center group">
               <div className="flex items-center justify-center relative">
                  <div className="w-4 h-4 rounded-full bg-[#0B0F19] border-2 border-secondary z-10 hidden md:block group-hover:scale-150 group-hover:bg-secondary transition-all duration-300"></div>
@@ -256,7 +247,6 @@ const About = () => {
           </div>
         </section>
 
-        {/* CTA Section */}
         <section className="mt-12 md:mt-20 text-center pb-20">
            <Reveal>
             <div className="glassmorphism p-8 md:p-12 rounded-3xl relative overflow-hidden group border border-white/10">

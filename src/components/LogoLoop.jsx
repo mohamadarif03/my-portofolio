@@ -3,13 +3,13 @@ import React, { useEffect, useRef, useState } from 'react';
 const LogoLoop = ({
   logos = [],
   speed = 50,
-  direction = 'left', // 'left', 'right', 'up', 'down'
+  direction = 'left',
   logoHeight = 48,
   gap = 40,
   hoverSpeed,
   scaleOnHover = false,
   fadeOut = false,
-  fadeOutColor = 'transparent', // Unused if using mask-image
+  fadeOutColor = 'transparent',
   ariaLabel = "Logo Loop"
 }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -18,29 +18,29 @@ const LogoLoop = ({
 
   const isHorizontal = direction === 'left' || direction === 'right';
 
-  // Determine current speed based on hover
+
   const currentSpeed = (isHovered && hoverSpeed !== undefined) ? hoverSpeed : speed;
 
   const position = useRef(0);
   const lastTime = useRef(0);
   const animationFrame = useRef(null);
 
-  // Measure content size for looping
+
   useEffect(() => {
     if (scrollerRef.current) {
-        // We assume the content is duplicated at least once. 
-        // Ideally we measure the SINGLE set width.
-        // But simplified: we just need to reset when we've scrolled half the width/height (assuming double content)
-        // Let's create enough duplicates to definitely fill screen + buffer.
-        // For simplicity in this logical block, let's assume scrollerRef contains exactly "Sets" of logos.
-        // If we render Triple, one set is 1/3 of scrollWidth.
+ 
+
+
+
+
+
         
         const total = isHorizontal 
             ? scrollerRef.current.scrollWidth 
             : scrollerRef.current.scrollHeight;
         
-        // We reset after one "set" of logos moves out of view.
-        // Since we render 3 sets, we traverse 1 set then jump back.
+
+
         setContentSize(total / 3);
     }
   }, [logos, gap, isHorizontal]);
@@ -56,50 +56,22 @@ const LogoLoop = ({
         
         if (direction === 'left' || direction === 'up') {
             position.current -= moveAmount;
-            // If we moved past one set size, reset (add set size)
+
             if (position.current <= -contentSize) {
                 position.current += contentSize; 
             }
         } else {
-            // right or down
+
             position.current += moveAmount;
-            // If we moved "positive" past 0 (start), we need to snap back to -contentSize?
-            // Wait. Initial position is 0. 
-            // If 'right', we want to move towards positive X.
-            // But we need to show content coming from left.
-            // Usually we start at -contentSize (showing 2nd set) and move towards 0.
-            
-            // To simplify, let's keep position logic:
+
             if (position.current >= 0) {
                  position.current -= contentSize;
             }
         }
         
-        // Apply transform
+
         if (scrollerRef.current) {
-            // For right/down, we might need an offset to ensure we see the middle set initially?
-            // Or simpler: Just init with some negative offset if needed.
-            // Let's use standard logic: Translate.
-            
-            // If 'right', start at -contentSize and go up to 0.
-            // Let's force position to be in range [-contentSize, 0] always? No.
-            
-            // Re-eval 'right':
-            // We want logos to move --->
-            // Start at -contentSize (showing 2nd set). 
-            // Move +speed. 
-            // When > 0, reset to -contentSize.
-            
-            // Initial render: 0. 
-            // If 'right', we should probably set initial position logic outside loop?
-            // But loop handles delta.
-            
-           if ((direction === 'right' || direction === 'down') && position.current > 0) {
-                 position.current = -contentSize;
-           }
-           
-           // Actually for 'right'/'down' we should probably initialize position at -contentSize?
-           // I'll handle that via `initial` check logic or just letting it flow.
+
            
             if (isHorizontal) {
                 scrollerRef.current.style.transform = `translateX(${position.current}px)`;
@@ -119,7 +91,7 @@ const LogoLoop = ({
     };
   }, [currentSpeed, contentSize, direction, isHorizontal]);
   
-  // Set initial position for right/down directions to ensure smooth start
+
   useEffect(() => {
       if ((direction === 'right' || direction === 'down') && contentSize > 0 && position.current === 0) {
           position.current = -contentSize;
@@ -134,7 +106,7 @@ const LogoLoop = ({
     overflow: 'hidden',
     userSelect: 'none',
     width: '100%',
-    height: isHorizontal ? 'auto' : '100%', // Respect container height if vertical
+    height: isHorizontal ? 'auto' : '100%',
     ...(fadeOut ? { 
         maskImage: isHorizontal 
             ? 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)' 
@@ -166,7 +138,7 @@ const LogoLoop = ({
     const Wrapper = item.href ? 'a' : 'div';
     const wrapperProps = item.href ? { href: item.href, target: '_blank', rel: 'noopener noreferrer' } : {};
     
-    // Add dark mode support for text colors within the loop if not specified
+
     return (
       <Wrapper 
         key={`${keyPrefix}-${index}`} 
@@ -179,7 +151,7 @@ const LogoLoop = ({
     );
   };
 
-  // Render 3 sets for safety (1 visible, 1 buffer left, 1 buffer right logic)
+
   return (
     <div 
         style={containerStyle} 

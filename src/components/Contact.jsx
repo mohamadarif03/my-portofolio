@@ -13,7 +13,6 @@ const Contact = () => {
             </Reveal>
 
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
-                {/* Form Section */}
                 <div className="lg:col-span-3">
                     <Reveal delay={0.2} width="100%">
                         <div className="glassmorphism rounded-2xl p-8 border border-slate-200 dark:border-white/5">

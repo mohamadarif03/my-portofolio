@@ -42,10 +42,10 @@ const SplitText = ({
       
       gsap.fromTo(
         elements,
-        { ...from, opacity: 0 }, // Ensure starting opacity is 0
+        { ...from, opacity: 0 },
         {
           ...to,
-          opacity: 1, // Ensure ending opacity is 1
+          opacity: 1,
           duration,
           ease,
           stagger: 0.05,

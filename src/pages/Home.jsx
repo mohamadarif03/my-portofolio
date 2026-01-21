@@ -32,7 +32,6 @@ const Home = () => {
 
     return (
         <main className="w-full flex flex-col items-center gap-20 md:gap-32 pb-20 relative selection:bg-primary/30 selection:text-white">
-            {/* Scroll Progress Bar */}
             <motion.div
                 className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary to-purple-500 origin-left z-50"
                 style={{ scaleX }}

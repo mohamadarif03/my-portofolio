@@ -28,7 +28,7 @@ const ProjectDetail = () => {
     const isNotebook = ["Data Science", "Machine Learning", "AI"].includes(project.tag);
     const linkLabel = isNotebook ? "View Notebook" : "Visit Website";
 
-    // Use gallery if available, otherwise just use the single image
+
     const galleryImages = project.gallery ? project.gallery : [project.image];
 
     return (
@@ -43,7 +43,6 @@ const ProjectDetail = () => {
 
                 <Reveal delay={0.1}>
                     <div className="flex flex-col gap-4 mb-10">
-                        {/* Main View Data */}
                         <div className="relative aspect-video rounded-2xl overflow-hidden border border-white/10 group bg-slate-900">
                             {showPdf && project.pdf ? (
                                 <iframe
@@ -63,9 +62,7 @@ const ProjectDetail = () => {
                             )}
                         </div>
 
-                        {/* Controls & Thumbnails */}
                         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-                            {/* Thumbnails */}
                             <div className="flex gap-2 overflow-x-auto pb-2 max-w-full">
                                 {galleryImages.map((img, idx) => (
                                     <button
@@ -84,7 +81,6 @@ const ProjectDetail = () => {
                                 ))}
                             </div>
 
-                            {/* PDF Toggle */}
                             {project.pdf && (
                                 <button
                                     onClick={() => setShowPdf(!showPdf)}

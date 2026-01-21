@@ -5,7 +5,7 @@ const About = () => {
    return (
       <section id="about" className="w-full max-w-5xl flex flex-col gap-12 py-10">
 
-         {/* --- Bagian 1: Dual Expertise --- */}
+
          <div className="w-full">
             <Reveal>
                <div className="flex flex-col items-center mb-8 text-center">
@@ -15,7 +15,7 @@ const About = () => {
             </Reveal>
 
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-               {/* Card 1: Web Dev */}
+
                <Reveal width="100%">
                   <div className="group flex flex-1 flex-col gap-4 rounded-2xl border border-white/10 glassmorphism p-8 hover:border-primary/50 transition-colors h-full">
                      <div className="size-12 rounded-lg bg-primary/20 flex items-center justify-center text-primary group-hover:scale-110 transition-transform duration-300">
@@ -30,7 +30,7 @@ const About = () => {
                   </div>
                </Reveal>
 
-               {/* Card 2: Data Science */}
+
                <Reveal width="100%" delay={0.2}>
                   <div className="group flex flex-1 flex-col gap-4 rounded-2xl border border-white/10 glassmorphism p-8 hover:border-secondary/50 transition-colors h-full">
                      <div className="size-12 rounded-lg bg-secondary/20 flex items-center justify-center text-secondary group-hover:scale-110 transition-transform duration-300">

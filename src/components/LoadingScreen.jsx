@@ -5,7 +5,7 @@ const LoadingScreen = ({ onComplete }) => {
     useEffect(() => {
         const timer = setTimeout(() => {
             onComplete();
-        }, 2200); // Total duration of loading screen
+        }, 2200);
         return () => clearTimeout(timer);
     }, [onComplete]);
 
@@ -41,7 +41,7 @@ const LoadingScreen = ({ onComplete }) => {
                 </div>
             </motion.div>
 
-            {/* Ambient Background Animation */}
+            
             <div className="absolute inset-0 pointer-events-none">
                 <motion.div 
                     className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary/20 rounded-full blur-[80px]"

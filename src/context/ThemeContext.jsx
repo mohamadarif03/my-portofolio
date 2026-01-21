@@ -13,7 +13,7 @@ export const ThemeProvider = ({ children }) => {
   }, []);
 
   const toggleTheme = () => {
-    // Theme toggle disabled
+
   };
 
   return (

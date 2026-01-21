@@ -19,7 +19,7 @@ const GithubInsights = () => {
         const contribRes = await fetch(`https://github-contributions-api.jogruber.de/v4/${username}?y=last`);
         const contribJson = await contribRes.json();
 
-        // Logic Fetch Repos (Public vs Private)
+
         const token = import.meta.env.VITE_GITHUB_TOKEN;
         let repoJson = [];
 
@@ -35,7 +35,7 @@ const GithubInsights = () => {
           repoJson = await repoRes.json();
         }
 
-        // Calculate Total Contributions (Last Year)
+
         const total = Object.values(contribJson.total).reduce((a, b) => a + b, 0);
         setTotalContrib(total);
 
@@ -43,13 +43,13 @@ const GithubInsights = () => {
         const lastYearData = flatContributions.slice(-365);
         setContributionData(lastYearData);
 
-        // Advanced Streak Calculation
+
         let currentStreak = 0;
         let startDate = null;
         let endDate = null;
         
-        // Reverse iterate to find streak
-        // Check if today or yesterday has contribution to start the streak
+
+
         const todayStr = new Date().toISOString().split('T')[0];
         const yesterday = new Date();
         yesterday.setDate(yesterday.getDate() - 1);
@@ -58,8 +58,8 @@ const GithubInsights = () => {
         let streakActive = false;
         let activeIdx = -1;
 
-        // Find the starting point of the streak (today or yesterday)
-        // We look at the very end of the flattened list
+
+
         for (let i = flatContributions.length - 1; i >= 0; i--) {
             const day = flatContributions[i];
             if (day.date === todayStr && day.count > 0) {
@@ -69,17 +69,14 @@ const GithubInsights = () => {
                 break;
             }
             if (day.date === yesterdayStr && day.count > 0) {
-                // If today is 0 but yesterday is > 0, streak is still active
+
                 streakActive = true;
                 activeIdx = i;
                 endDate = day.date;
-                // Check if today actually exists in data and is 0? 
-                // The loop starts from end, so if today is i, we skipped it.
-                // But simplified: Just find the latest day with contribution. 
-                // If it is NOT today OR yesterday, then streak is 0.
+
                 break;
             }
-            // If we went past yesterday, stop checking for "start"
+
             if (new Date(day.date) < yesterday) {
                 break;
             }
@@ -87,7 +84,7 @@ const GithubInsights = () => {
 
         if (streakActive) {
             currentStreak = 1;
-            startDate = endDate; // initially
+            startDate = endDate;
             // Count backwards from activeIdx
             for (let i = activeIdx - 1; i >= 0; i--) {
                 if (flatContributions[i].count > 0) {
@@ -239,16 +236,7 @@ const GithubInsights = () => {
           </Reveal>
         </div>
 
-        {/* GitHub Streak Stats Image
-        <Reveal delay={0.4}>
-            <div className="flex justify-center w-full">
-                <img 
-                    src={`https://streak-stats.demolab.com/?user=${username}&theme=dark&background=0f172a00&ring=8B5CF6&currStreakLabel=8B5CF6`} 
-                    alt="GitHub Streak" 
-                    className="w-full max-w-2xl hover:scale-[1.02] transition-transform duration-300 drop-shadow-2xl"
-                />
-            </div>
-        </Reveal> */}
+
 
         <Reveal delay={0.5}>
           <div className="glassmorphism p-6 md:p-8 rounded-2xl border border-white/5 overflow-hidden">

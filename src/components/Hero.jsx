@@ -50,7 +50,7 @@ const Typewriter = ({ texts, delay }) => {
 };
 
 const Hero = () => {
-    // Parallax & Mouse Move Effect
+
     const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
     
     useEffect(() => {
@@ -142,7 +142,6 @@ const Hero = () => {
           <Reveal delay={0.2}>
             <div className="relative w-72 h-72 md:w-96 md:h-96 group perspective-1000">
               
-              {/* Floating Elements Background */}
               <motion.div 
                 animate={{ y: [0, -20, 0], rotate: [0, 5, 0] }}
                 transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
@@ -154,7 +153,6 @@ const Hero = () => {
                 className="absolute -bottom-5 -left-5 w-16 h-16 bg-primary/20 rounded-full backdrop-blur-md border border-white/10 z-0"
               />
 
-              {/* Main Image Container */}
               <div className="relative w-full h-full z-10">
                   <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-primary via-violet-500 to-secondary blur-3xl opacity-50 animate-pulse-slow"></div>
                   <motion.div 
@@ -169,7 +167,6 @@ const Hero = () => {
                   </motion.div>
               </div>
 
-              {/* Floating Badge */}
               <motion.div
                 animate={{ y: [0, -10, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}

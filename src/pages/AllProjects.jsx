@@ -22,7 +22,7 @@ const AllProjects = () => {
         return false;
     });
 
-    // Reset active project when filter changes
+
     useEffect(() => {
         if (filteredProjects.length > 0) {
             setActiveProjectId(filteredProjects[0].id);
@@ -34,7 +34,7 @@ const AllProjects = () => {
 
     const handleMouseEnter = (id) => {
         setHoveredProject(id);
-        // Small delay to prevent jittery transitions
+
         setTimeout(() => {
             setActiveProjectId(id);
         }, 50);
@@ -136,7 +136,6 @@ const AllProjects = () => {
                                         ${isActive ? 'md:col-span-2 border-primary/50 shadow-2xl shadow-primary/10 z-10' : 'md:col-span-1 border-white/5 hover:border-white/20 z-0'}
                                     `}
                                 >
-                                    {/* Image Background */}
                                     <div className="absolute inset-0 z-0 overflow-hidden">
                                          <div className={`absolute inset-0 bg-gradient-to-t from-[#0B0F19] via-[#0B0F19]/60 to-transparent z-10 transition-opacity duration-500 ${isActive ? 'opacity-80' : 'opacity-90'}`}></div>
                                         <motion.img
@@ -149,7 +148,6 @@ const AllProjects = () => {
                                         />
                                     </div>
 
-                                    {/* Content Overlay */}
                                     <div className="absolute inset-0 z-20 p-6 md:p-10 flex flex-col justify-end">
                                         <motion.div 
                                             layout

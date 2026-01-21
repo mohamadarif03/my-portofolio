@@ -9,7 +9,7 @@ const HomeAbout = () => {
     <section className="w-full max-w-6xl mx-auto px-4 py-20">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         
-        {/* Image / Visual */}
+        
         <div className="relative order-2 md:order-1 flex justify-center">
              <Reveal delay={0.2}>
                 <div className="relative w-64 h-64 md:w-80 md:h-80">
@@ -26,7 +26,7 @@ const HomeAbout = () => {
              </Reveal>
         </div>
 
-        {/* Text Content */}
+        
         <div className="order-1 md:order-2">
             <Reveal>
                 <div className="flex items-center gap-2 mb-4">

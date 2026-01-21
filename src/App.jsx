@@ -8,7 +8,7 @@ import ScrollToTop from './components/ScrollToTop';
 import ScrollToTopHandler from './components/ScrollToTopHandler';
 import LoadingScreen from './components/LoadingScreen';
 
-// import DarkVeil from './components/DarkVeil';
+
 
 import Home from './pages/Home';
 import AllProjects from './pages/AllProjects';
@@ -30,7 +30,6 @@ function App() {
 
         <div className="fixed inset-0 z-0 pointer-events-none">
           <div className="absolute inset-0 bg-grid-pattern"></div>
-          {/* <DarkVeil /> */}
 
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.1)_100%)] dark:bg-[radial-gradient(circle_at_center,transparent_0%,rgba(11,15,25,0.8)_100%)]"></div>
         </div>
