@@ -37,11 +37,11 @@ const Typewriter = ({ texts, delay }) => {
             setCurrentText(currentString.slice(0, currentIndex + 1));
             setCurrentIndex(prev => prev + 1);
             if (currentIndex === currentString.length) {
-                setTimeout(() => setIsDeleting(true), 2000); // Wait before deleting
+                setTimeout(() => setIsDeleting(true), 2000);
                 return;
             }
         }
-      }, isDeleting ? 50 : 100); // Typing speed vs deleting speed
+      }, isDeleting ? 50 : 100);
   
       return () => clearTimeout(timeout);
     }, [currentIndex, isDeleting, texts, textIndex, currentText]);
