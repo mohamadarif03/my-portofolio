@@ -96,66 +96,14 @@ const GithubInsights = () => {
     };
 
     const fetchRepos = async () => {
-      try {
-        const token = import.meta.env.VITE_GITHUB_TOKEN;
-        let repoJson = [];
-        const headers = token ? { Authorization: `Bearer ${token}` } : {};
-
-        // Always use the public endpoint to ensure data consistency
-        const repoRes = await fetch(
-          `https://api.github.com/users/${username}/repos?per_page=100&sort=updated`,
-          { headers }
-        );
-
-        if (!repoRes.ok) throw new Error("Gagal mengambil data repository");
-        repoJson = await repoRes.json();
-
-        const langCounts = {};
-        let totalRepos = 0;
-
-        repoJson.forEach((repo) => {
-          if (repo.language) {
-            langCounts[repo.language] = (langCounts[repo.language] || 0) + 1;
-            totalRepos++;
-          }
-        });
-
-        const languages = Object.keys(langCounts)
-          .map((lang) => ({
-            name: lang,
-            count: langCounts[lang],
-            pct: Math.round((langCounts[lang] / totalRepos) * 100),
-          }))
-          .sort((a, b) => b.count - a.count)
-          .slice(0, 4);
-
-        const colors = [
-          "bg-primary",
-          "bg-secondary",
-          "bg-orange-500",
-          "bg-blue-500",
-        ];
-        const shadows = [
-          "shadow-[0_0_10px_#8B5CF6]",
-          "shadow-[0_0_10px_#06B6D4]",
-          "shadow-none",
-          "shadow-none",
-        ];
-
-        const styledLanguages = languages.map((lang, i) => ({
-          ...lang,
-          color: colors[i] || "bg-slate-500",
-          shadow: shadows[i] || "shadow-none",
-        }));
-
-        setLanguageData(styledLanguages);
-      } catch (repoError) {
-        console.warn(
-          "Gagal mengambil data repository:",
-          repoError
-        );
-        setLanguageData([]);
-      }
+      // User requested static data for now
+      const staticLanguages = [
+        { name: "HTML", pct: 28, color: "bg-orange-500", shadow: "shadow-[0_0_10px_#f97316]" },
+        { name: "Javascript", pct: 24, color: "bg-yellow-400", shadow: "shadow-[0_0_10px_#facc15]" },
+        { name: "Jupyter Notebook", pct: 19, color: "bg-orange-400", shadow: "shadow-none" },
+        { name: "Go", pct: 15, color: "bg-blue-500", shadow: "shadow-[0_0_10px_#3b82f6]" },
+      ];
+      setLanguageData(staticLanguages);
     };
 
     const loadData = async () => {
