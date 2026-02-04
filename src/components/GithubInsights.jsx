@@ -14,18 +14,17 @@ const GithubInsights = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchGithubData = async () => {
+    const fetchContributions = async () => {
       try {
-        // 1. Fetch Contributions (prioritized as it's the main visual)
         const contribRes = await fetch(
-          `https://github-contributions-api.jogruber.de/v4/${username}?y=last`,
+          `https://github-contributions-api.jogruber.de/v4/${username}?y=last`
         );
         const contribJson = await contribRes.json();
 
         // Process Contribution Data Immediately
         const total = Object.values(contribJson.total).reduce(
           (a, b) => a + b,
-          0,
+          0
         );
         setTotalContrib(total);
 
@@ -82,7 +81,7 @@ const GithubInsights = () => {
           const options = { month: "short", day: "numeric" };
           const startStr = new Date(startDate).toLocaleDateString(
             "en-US",
-            options,
+            options
           );
           const endStr = new Date(endDate).toLocaleDateString("en-US", options);
           setStreakStart(startStr);
@@ -91,78 +90,81 @@ const GithubInsights = () => {
           setStreakStart("-");
           setStreakEnd("-");
         }
-
-        // 2. Fetch Repositories (Independent step)
-        try {
-          const token = import.meta.env.VITE_GITHUB_TOKEN;
-          let repoJson = [];
-
-          const headers = token ? { Authorization: `Bearer ${token}` } : {};
-          
-          // Always use the public endpoint to ensure data consistency with local (non-token) dev
-          const repoRes = await fetch(
-            `https://api.github.com/users/${username}/repos?per_page=100&sort=updated`,
-            { headers }
-          );
-
-          if (!repoRes.ok) throw new Error("Gagal mengambil data repository");
-          repoJson = await repoRes.json();
-
-
-          const langCounts = {};
-          let totalRepos = 0;
-
-          repoJson.forEach((repo) => {
-            if (repo.language) {
-              langCounts[repo.language] = (langCounts[repo.language] || 0) + 1;
-              totalRepos++;
-            }
-          });
-
-          const languages = Object.keys(langCounts)
-            .map((lang) => ({
-              name: lang,
-              count: langCounts[lang],
-              pct: Math.round((langCounts[lang] / totalRepos) * 100),
-            }))
-            .sort((a, b) => b.count - a.count)
-            .slice(0, 4);
-
-          const colors = [
-            "bg-primary",
-            "bg-secondary",
-            "bg-orange-500",
-            "bg-blue-500",
-          ];
-          const shadows = [
-            "shadow-[0_0_10px_#8B5CF6]",
-            "shadow-[0_0_10px_#06B6D4]",
-            "shadow-none",
-            "shadow-none",
-          ];
-
-          const styledLanguages = languages.map((lang, i) => ({
-            ...lang,
-            color: colors[i] || "bg-slate-500",
-            shadow: shadows[i] || "shadow-none",
-          }));
-
-          setLanguageData(styledLanguages);
-        } catch (repoError) {
-          console.warn(
-            "Gagal mengambil data repository, tetapi kontribusi tetap ditampilkan.",
-            repoError,
-          );
-          setLanguageData([]);
-        }
       } catch (error) {
-        console.error("Gagal mengambil data GitHub:", error);
-      } finally {
-        setLoading(false);
+        console.error("Gagal mengambil data kontribusi:", error);
       }
     };
 
-    fetchGithubData();
+    const fetchRepos = async () => {
+      try {
+        const token = import.meta.env.VITE_GITHUB_TOKEN;
+        let repoJson = [];
+        const headers = token ? { Authorization: `Bearer ${token}` } : {};
+
+        // Always use the public endpoint to ensure data consistency
+        const repoRes = await fetch(
+          `https://api.github.com/users/${username}/repos?per_page=100&sort=updated`,
+          { headers }
+        );
+
+        if (!repoRes.ok) throw new Error("Gagal mengambil data repository");
+        repoJson = await repoRes.json();
+
+        const langCounts = {};
+        let totalRepos = 0;
+
+        repoJson.forEach((repo) => {
+          if (repo.language) {
+            langCounts[repo.language] = (langCounts[repo.language] || 0) + 1;
+            totalRepos++;
+          }
+        });
+
+        const languages = Object.keys(langCounts)
+          .map((lang) => ({
+            name: lang,
+            count: langCounts[lang],
+            pct: Math.round((langCounts[lang] / totalRepos) * 100),
+          }))
+          .sort((a, b) => b.count - a.count)
+          .slice(0, 4);
+
+        const colors = [
+          "bg-primary",
+          "bg-secondary",
+          "bg-orange-500",
+          "bg-blue-500",
+        ];
+        const shadows = [
+          "shadow-[0_0_10px_#8B5CF6]",
+          "shadow-[0_0_10px_#06B6D4]",
+          "shadow-none",
+          "shadow-none",
+        ];
+
+        const styledLanguages = languages.map((lang, i) => ({
+          ...lang,
+          color: colors[i] || "bg-slate-500",
+          shadow: shadows[i] || "shadow-none",
+        }));
+
+        setLanguageData(styledLanguages);
+      } catch (repoError) {
+        console.warn(
+          "Gagal mengambil data repository:",
+          repoError
+        );
+        setLanguageData([]);
+      }
+    };
+
+    const loadData = async () => {
+      setLoading(true);
+      await Promise.allSettled([fetchContributions(), fetchRepos()]);
+      setLoading(false);
+    };
+
+    loadData();
   }, []);
 
   const getHeatmapColor = (level) => {
