@@ -107,7 +107,7 @@ const GithubInsights = () => {
 
           if (!repoRes.ok) throw new Error("Gagal mengambil data repository");
           repoJson = await repoRes.json();
-          repoJson = await repoRes.json();
+
 
           const langCounts = {};
           let totalRepos = 0;
