@@ -97,24 +97,17 @@ const GithubInsights = () => {
           const token = import.meta.env.VITE_GITHUB_TOKEN;
           let repoJson = [];
 
-          if (token) {
-            const repoRes = await fetch(
-              `https://api.github.com/user/repos?per_page=100&affiliation=owner,collaborator`,
-              {
-                headers: { Authorization: `Bearer ${token}` },
-              },
-            );
-            if (!repoRes.ok)
-              throw new Error("Gagal mengambil data repository dengan token");
-            repoJson = await repoRes.json();
-          } else {
-            const repoRes = await fetch(
-              `https://api.github.com/users/${username}/repos?per_page=100&sort=updated`,
-            );
-            if (!repoRes.ok)
-              throw new Error("Gagal mengambil data repository public");
-            repoJson = await repoRes.json();
-          }
+          const headers = token ? { Authorization: `Bearer ${token}` } : {};
+          
+          // Always use the public endpoint to ensure data consistency with local (non-token) dev
+          const repoRes = await fetch(
+            `https://api.github.com/users/${username}/repos?per_page=100&sort=updated`,
+            { headers }
+          );
+
+          if (!repoRes.ok) throw new Error("Gagal mengambil data repository");
+          repoJson = await repoRes.json();
+          repoJson = await repoRes.json();
 
           const langCounts = {};
           let totalRepos = 0;
