@@ -260,9 +260,7 @@ const GithubInsights = () => {
                       </div>
                     ))}
                 {!loading && languageData.length === 0 && (
-                  <p className="text-xs text-center text-slate-500">
-                    No public repos found.
-                  </p>
+                  <p className="text-xs text-center text-slate-500">No public repos found (or API limit reached).</p>
                 )}
               </div>
             </div>
