@@ -96,7 +96,6 @@ const GithubInsights = () => {
     };
 
     const fetchRepos = async () => {
-      // User requested static data for now
       const staticLanguages = [
         { name: "HTML", pct: 28, color: "bg-orange-500", shadow: "shadow-[0_0_10px_#f97316]" },
         { name: "Javascript", pct: 24, color: "bg-yellow-400", shadow: "shadow-[0_0_10px_#facc15]" },

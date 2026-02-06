@@ -3,6 +3,7 @@ import visComPdf from '../assets/certified/dicoding-belajar visualisasi data.pdf
 import pythonPdf from '../assets/certified/dicoding-memulai pemrograman dengan python.pdf';
 import golangPdf from '../assets/certified/golang-bootcamp-sanbercode.pdf';
 import mlIbmPdf from '../assets/certified/machine-learning-IBM.pdf';
+import tArtsPdf from '../assets/certified/winner 3rd place t-arts competition.pdf';
 
 import getSkillImg from '../assets/projects/get-skill/image.png';
 import getSkillImg1 from '../assets/projects/get-skill/image1.png';
@@ -39,11 +40,13 @@ import belajarMachineLearning from '../assets/certified/img/dicoding-belajar mac
 import belajarVisualisasiData from '../assets/certified/img/dicoding-belajar visualisasi data.png';
 import memulaiPemrogramanPython from '../assets/certified/img/dicoding-memulai pemrograman dengan python.png';
 import mlIbmImg from '../assets/certified/img/machine-learning-ibm.png';
+import tArtsImg from '../assets/certified/img/winner 3rd place t-arts competition.png';
 
 import gallery1 from '../assets/galery/galery1.jpg';
 import gallery2 from '../assets/galery/galery2.jpeg';
 import gallery3 from '../assets/galery/galery3.jpeg';
 import gallery4 from '../assets/galery/galery4.jpeg';
+import gallery5 from '../assets/galery/galery5.jpeg';
 
 export const projectsData = [
     {
@@ -221,6 +224,19 @@ export const projectsData = [
 
 export const certificatesData = [
     {
+        title: "3rd Place Winner T-Arts Competition 3.0",
+        issuer: "T-Arts Competition",
+        image: tArtsImg,
+        color: "bg-rose-500",
+        overlay: "bg-rose-500/20",
+        btnBorder: "border-rose-500/50",
+        btnText: "text-white",
+        btnHover: "hover:bg-rose-500",
+        pdf: tArtsPdf,
+        id: "cert-t-arts-3",
+        verificationLink: ""
+    },
+    {
         title: "Machine Learning with Python",
         issuer: "IBM",
         image: mlIbmImg,
@@ -311,5 +327,11 @@ export const galleryData = [
         title: "External Examiner & Awards",
         image: gallery4,
         detail: "Awarding the top 3 performing students while serving as a competency exam assessor at SMKN 6 Jember."
+    },
+    {
+        id: 5,
+        title: "ITC 8.0 Champion",
+        image: gallery5,
+        detail: "Winner of the ITC 8.0 WebApp Development competition at Udinus Semarang, securing 1st Place."
     }
 ];
